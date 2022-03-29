@@ -1,0 +1,8 @@
+package com.shopeefood.services.impls;
+
+import com.shopeefood.services.IEvaluationFoodService;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class EvaluationFoodService implements IEvaluationFoodService {
+}
