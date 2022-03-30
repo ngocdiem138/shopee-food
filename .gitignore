@@ -10,6 +10,8 @@ target/
 *.iml
 *.ipr
 
+git_token.md
+
 # testing
 **/coverage
 
