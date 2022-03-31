@@ -54,6 +54,10 @@ public class Food extends Base {
     @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "food_category_id_fk"))
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "food_menu_id_fk"))
+    private Menu menu;
+
     @Cascade(ALL)
     @ToString.Exclude
     @OneToMany(mappedBy = "food")
