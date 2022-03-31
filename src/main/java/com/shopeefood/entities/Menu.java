@@ -38,6 +38,6 @@ public class Menu extends Base{
 
     @Cascade(ALL)
     @ToString.Exclude
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "menu")
     private List<Food> foods = new ArrayList<>();
 }

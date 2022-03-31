@@ -40,15 +40,4 @@ public class Cart extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "cart")
     private List<CartDetail> cartDetails = new ArrayList<>();
-
-    public void addCartDetail(CartDetail cartDetail) {
-        if (!this.cartDetails.contains(cartDetail)) {
-            this.cartDetails.add(cartDetail);
-            cartDetail.setCart(this);
-        }
-    }
-
-    public void removeCartDetail(CartDetail cartDetail) {
-        this.cartDetails.remove(cartDetail);
-    }
 }
