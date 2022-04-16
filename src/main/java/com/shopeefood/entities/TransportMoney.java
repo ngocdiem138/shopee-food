@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -45,4 +44,18 @@ public class TransportMoney extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "transportMoney")
     private List<Bill> bills = new ArrayList<>();
+
+    public void addBill(@NonNull Bill bill) {
+        if (!this.bills.contains(bill)) {
+            this.bills.add(bill);
+            bill.setTransportMoney(this);
+        }
+    }
+
+    public void removeBill(@NonNull Bill bill) {
+        if (this.bills.contains(bill)) {
+            this.bills.remove(bill);
+            bill.setTransportMoney(null);
+        }
+    }
 }

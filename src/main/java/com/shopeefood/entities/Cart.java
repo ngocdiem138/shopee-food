@@ -4,12 +4,11 @@ import lombok.*;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -40,4 +39,18 @@ public class Cart extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "cart")
     private List<CartDetail> cartDetails = new ArrayList<>();
+
+    public void addCartDetail(@NonNull CartDetail cartDetail) {
+        if (!this.cartDetails.contains(cartDetail)) {
+            this.cartDetails.add(cartDetail);
+            cartDetail.setCart(this);
+        }
+    }
+
+    public void removeCartDetail(@NonNull CartDetail cartDetail) {
+        if (this.cartDetails.contains(cartDetail)) {
+            this.cartDetails.remove(cartDetail);
+            cartDetail.setCart(null);
+        }
+    }
 }

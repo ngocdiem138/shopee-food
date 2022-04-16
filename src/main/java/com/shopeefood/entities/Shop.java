@@ -4,18 +4,16 @@ import com.shopeefood.types.TimeMapCustomization;
 import lombok.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -108,6 +106,78 @@ public class Shop extends Base {
             joinColumns = @JoinColumn(name = "shop_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> staffs = new ArrayList<>();
+
+    public void addBill(@NonNull Bill bill) {
+        if (!this.bills.contains(bill)) {
+            this.bills.add(bill);
+            bill.setShop(this);
+        }
+    }
+
+    public void removeBill(@NonNull Bill bill) {
+        if (this.bills.contains(bill)) {
+            this.bills.remove(bill);
+            bill.setShop(null);
+        }
+    }
+
+    public void addShopFood(@NonNull ShopFood shopFood) {
+        if (!this.shopFoods.contains(shopFood)) {
+            this.shopFoods.add(shopFood);
+            shopFood.setShop(this);
+        }
+    }
+
+    public void removeShopFood(@NonNull ShopFood shopFood) {
+        if (this.shopFoods.contains(shopFood)) {
+            this.shopFoods.remove(shopFood);
+            shopFood.setShop(null);
+        }
+    }
+
+    public void addVoucher(@NonNull Voucher voucher) {
+        if (!this.vouchers.contains(voucher)) {
+            this.vouchers.add(voucher);
+            voucher.setShop(this);
+        }
+    }
+
+    public void removeVoucher(@NonNull Voucher voucher) {
+        if (this.vouchers.contains(voucher)) {
+            this.vouchers.remove(voucher);
+            voucher.setShop(null);
+        }
+    }
+
+    public void addEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+        if (!this.evaluationShops.contains(evaluationShop)) {
+            this.evaluationShops.add(evaluationShop);
+            evaluationShop.setShop(this);
+        }
+    }
+
+    public void removeEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+        if (this.evaluationShops.contains(evaluationShop)) {
+            this.evaluationShops.remove(evaluationShop);
+            evaluationShop.setShop(null);
+        }
+    }
+
+    public void addStaff(@NonNull User staff) {
+        if (!this.staffs.contains(staff)) {
+            this.staffs.add(staff);
+            staff.getStaffOfShops().add(this);
+            staff.setStaffOfShops(staff.getStaffOfShops());
+        }
+    }
+
+    public void removeStaff(@NonNull User staff) {
+        if (this.staffs.contains(staff)) {
+            this.staffs.remove(staff);
+            staff.getStaffOfShops().remove(this);
+            staff.setStaffOfShops(staff.getStaffOfShops());
+        }
+    }
 
     public void setOpenTime(@NonNull List<TimeMapCustomization<LocalTime, LocalTime>> timeMapCustomizations) {
         this.openTime = TimeMapCustomization.getStringFromListTimeMapCustomization(timeMapCustomizations);

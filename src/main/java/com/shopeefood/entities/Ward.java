@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -45,4 +44,18 @@ public class Ward extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "ward")
     private List<Location> locations = new ArrayList<>();
+
+    public void addLocation(@NonNull Location location) {
+        if (!this.locations.contains(location)) {
+            this.locations.add(location);
+            location.setWard(this);
+        }
+    }
+
+    public void removeLocation(@NonNull Location location) {
+        if (this.locations.contains(location)) {
+            this.locations.remove(location);
+            location.setWard(null);
+        }
+    }
 }
