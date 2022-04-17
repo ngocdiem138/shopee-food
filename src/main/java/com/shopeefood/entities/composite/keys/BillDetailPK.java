@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Data
@@ -14,9 +15,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class BillDetailPK implements Serializable {
 
+    @NotNull
     @Column(nullable = false)
     private Long foodId;
 
+    @NotNull
     @Column(nullable = false)
     private Long billId;
 }
