@@ -3,15 +3,14 @@ package com.shopeefood.entities;
 import lombok.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -76,4 +75,34 @@ public class Voucher extends Base {
             joinColumns = @JoinColumn(name = "voucher_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users = new ArrayList<>();
+
+    public void addBillDetail(@NonNull BillDetail billDetail) {
+        if (!this.billDetails.contains(billDetail)) {
+            this.billDetails.add(billDetail);
+            billDetail.setVoucher(this);
+        }
+    }
+
+    public void removeBillDetail(@NonNull BillDetail billDetail) {
+        if (this.billDetails.contains(billDetail)) {
+            this.billDetails.remove(billDetail);
+            billDetail.setVoucher(null);
+        }
+    }
+
+    public void addUser(@NonNull User user) {
+        if (!this.users.contains(user)) {
+            this.users.add(user);
+            user.getVouchers().add(this);
+            user.setVouchers(user.getVouchers());
+        }
+    }
+
+    public void removeUser(@NonNull User user) {
+        if (this.users.contains(user)) {
+            this.users.remove(user);
+            user.getVouchers().remove(this);
+            user.setVouchers(user.getVouchers());
+        }
+    }
 }

@@ -12,8 +12,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Getter
@@ -104,4 +104,92 @@ public class User extends Base {
     @ToString.Exclude
     @ManyToMany(mappedBy = "staffs")
     private List<Shop> staffOfShops = new ArrayList<>();
+
+    public void addCart(@NonNull Cart cart) {
+        if (!this.carts.contains(cart)) {
+            this.carts.add(cart);
+            cart.setUser(this);
+        }
+    }
+
+    public void removeCart(@NonNull Cart cart) {
+        if (this.carts.contains(cart)) {
+            this.carts.remove(cart);
+            cart.setUser(null);
+        }
+    }
+
+    public void addEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+        if (!this.evaluationFoods.contains(evaluationFood)) {
+            this.evaluationFoods.add(evaluationFood);
+            evaluationFood.setUser(this);
+        }
+    }
+
+    public void removeEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+        if (this.evaluationFoods.contains(evaluationFood)) {
+            this.evaluationFoods.remove(evaluationFood);
+            evaluationFood.setUser(null);
+        }
+    }
+
+    public void addEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+        if (!this.evaluationShops.contains(evaluationShop)) {
+            this.evaluationShops.add(evaluationShop);
+            evaluationShop.setUser(this);
+        }
+    }
+
+    public void removeEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+        if (this.evaluationShops.contains(evaluationShop)) {
+            this.evaluationShops.remove(evaluationShop);
+            evaluationShop.setUser(null);
+        }
+    }
+
+    public void addBossOfShop(@NonNull Shop shop) {
+        if (!this.bossOfShops.contains(shop)) {
+            this.bossOfShops.add(shop);
+            shop.setUserBoss(this);
+        }
+    }
+
+    public void removeBossOfShop(@NonNull Shop shop) {
+        if (this.bossOfShops.contains(shop)) {
+            this.bossOfShops.remove(shop);
+            shop.setUserBoss(null);
+        }
+    }
+
+    public void addVoucher(@NonNull Voucher voucher) {
+        if (!this.vouchers.contains(voucher)) {
+            this.vouchers.add(voucher);
+            voucher.getUsers().add(this);
+            voucher.setUsers(voucher.getUsers());
+        }
+    }
+
+    public void removeVoucher(@NonNull Voucher voucher) {
+        if (this.vouchers.contains(voucher)) {
+            this.vouchers.remove(voucher);
+            voucher.getUsers().remove(this);
+            voucher.setUsers(voucher.getUsers());
+        }
+    }
+
+    public void addStaffOfShop(@NonNull Shop shop) {
+        if (!this.staffOfShops.contains(shop)) {
+            this.staffOfShops.add(shop);
+            shop.getStaffs().add(this);
+            shop.setStaffs(shop.getStaffs());
+        }
+    }
+
+    public void removeStaffOfShop(@NonNull Shop shop) {
+        if (this.staffOfShops.contains(shop)) {
+            this.staffOfShops.remove(shop);
+            shop.getStaffs().remove(this);
+            shop.setStaffs(shop.getStaffs());
+        }
+    }
 }

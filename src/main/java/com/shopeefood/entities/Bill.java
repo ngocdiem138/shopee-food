@@ -50,7 +50,6 @@ public class Bill extends Base {
     private Location location;
 
     @ManyToOne
-    @Setter(NONE)
     @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "bill_transport_money_id_fk"))
     private TransportMoney transportMoney;
 
@@ -58,6 +57,20 @@ public class Bill extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "bill")
     private List<BillDetail> billDetails = new ArrayList<>();
+
+    public void addBillDetail(@NonNull BillDetail billDetail) {
+        if (!this.billDetails.contains(billDetail)) {
+            this.billDetails.add(billDetail);
+            billDetail.setBill(this);
+        }
+    }
+
+    public void removeBillDetail(@NonNull BillDetail billDetail) {
+        if (this.billDetails.contains(billDetail)) {
+            this.billDetails.remove(billDetail);
+            billDetail.setBill(null);
+        }
+    }
 
     public void setTotalMoney(@NonNull List<BillDetail> billDetails) {
         this.totalMoney = billDetails.stream().mapToDouble(BillDetail::getMoney).sum() + transportMoney.getMoney();

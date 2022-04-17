@@ -6,8 +6,8 @@ import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 
 @Table
 @Getter

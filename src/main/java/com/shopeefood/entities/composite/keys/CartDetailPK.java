@@ -1,20 +1,21 @@
 package com.shopeefood.entities.composite.keys;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
 public class CartDetailPK implements Serializable {
 
+    @NotNull
     @Column(nullable = false)
     private Long cartId;
 }

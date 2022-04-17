@@ -50,4 +50,32 @@ public class Location extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "location")
     private List<Shop> shops = new ArrayList<>();
+
+    public void addUser(@NonNull User user) {
+        if (!this.users.contains(user)) {
+            this.users.add(user);
+            user.setLocation(this);
+        }
+    }
+
+    public void removeUser(@NonNull User user) {
+        if (this.users.contains(user)) {
+            this.users.remove(user);
+            user.setLocation(null);
+        }
+    }
+
+    public void addShop(@NonNull Shop shop) {
+        if (!this.shops.contains(shop)) {
+            this.shops.add(shop);
+            shop.setLocation(this);
+        }
+    }
+
+    public void removeShop(@NonNull Shop shop) {
+        if (!this.shops.contains(shop)) {
+            this.shops.remove(shop);
+            shop.setLocation(null);
+        }
+    }
 }

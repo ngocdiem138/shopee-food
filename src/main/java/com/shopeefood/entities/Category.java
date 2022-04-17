@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -41,4 +40,18 @@ public class Category extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "category")
     private List<Food> foods = new ArrayList<>();
+
+    public void addFood(@NonNull Food food) {
+        if (!this.foods.contains(food)) {
+            this.foods.add(food);
+            food.setCategory(this);
+        }
+    }
+
+    public void removeFood(@NonNull Food food) {
+        if (this.foods.contains(food)) {
+            this.foods.remove(food);
+            food.setCategory(null);
+        }
+    }
 }

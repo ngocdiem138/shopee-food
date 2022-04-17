@@ -19,7 +19,7 @@ import static org.hibernate.annotations.CascadeType.ALL;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-public class Menu extends Base{
+public class Menu extends Base {
 
     @Id
     @Setter(NONE)
@@ -40,4 +40,18 @@ public class Menu extends Base{
     @ToString.Exclude
     @OneToMany(mappedBy = "menu")
     private List<Food> foods = new ArrayList<>();
+
+    public void addFood(@NonNull Food food) {
+        if (!this.foods.contains(food)) {
+            this.foods.add(food);
+            food.setMenu(this);
+        }
+    }
+
+    public void removeFood(@NonNull Food food) {
+        if (this.foods.contains(food)) {
+            this.foods.remove(food);
+            food.setMenu(null);
+        }
+    }
 }

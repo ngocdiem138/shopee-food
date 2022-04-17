@@ -5,10 +5,9 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
-
 import java.util.Optional;
 
-import static lombok.AccessLevel.*;
+import static lombok.AccessLevel.NONE;
 
 @Table
 @Getter

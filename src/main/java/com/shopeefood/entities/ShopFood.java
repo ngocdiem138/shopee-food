@@ -6,7 +6,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
-import static lombok.AccessLevel.*;
+import static lombok.AccessLevel.NONE;
 
 @Table
 @Getter

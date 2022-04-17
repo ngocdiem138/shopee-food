@@ -45,4 +45,18 @@ public class Role extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<>();
+
+    public void addUser(@NonNull User user) {
+        if (!this.users.contains(user)) {
+            this.users.add(user);
+            user.setRole(this);
+        }
+    }
+
+    public void removeUser(@NonNull User user) {
+        if (this.users.contains(user)) {
+            this.users.remove(user);
+            user.setRole(null);
+        }
+    }
 }

@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -45,4 +44,18 @@ public class Province extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "province")
     private List<District> districts = new ArrayList<>();
+
+    public void addDistrict(@NonNull District district) {
+        if (!this.districts.contains(district)) {
+            this.districts.add(district);
+            district.setProvince(this);
+        }
+    }
+
+    public void removeDistrict(@NonNull District district) {
+        if (this.districts.contains(district)) {
+            this.districts.remove(district);
+            district.setProvince(null);
+        }
+    }
 }
