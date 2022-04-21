@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,14 +47,14 @@ public class TransportMoney extends Base {
     @OneToMany(mappedBy = "transportMoney")
     private List<Bill> bills = new ArrayList<>();
 
-    public void addBill(@NonNull Bill bill) {
+    public void addBill(@NotNull Bill bill) {
         if (!this.bills.contains(bill)) {
             this.bills.add(bill);
             bill.setTransportMoney(this);
         }
     }
 
-    public void removeBill(@NonNull Bill bill) {
+    public void removeBill(@NotNull Bill bill) {
         if (this.bills.contains(bill)) {
             this.bills.remove(bill);
             bill.setTransportMoney(null);

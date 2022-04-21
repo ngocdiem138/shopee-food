@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,14 +43,14 @@ public class Category extends Base {
     @OneToMany(mappedBy = "category")
     private List<Food> foods = new ArrayList<>();
 
-    public void addFood(@NonNull Food food) {
+    public void addFood(@NotNull Food food) {
         if (!this.foods.contains(food)) {
             this.foods.add(food);
             food.setCategory(this);
         }
     }
 
-    public void removeFood(@NonNull Food food) {
+    public void removeFood(@NotNull Food food) {
         if (this.foods.contains(food)) {
             this.foods.remove(food);
             food.setCategory(null);

@@ -6,6 +6,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,70 +84,70 @@ public class Food extends Base {
     @OneToMany(mappedBy = "food")
     private List<EvaluationFood> evaluationFoods = new ArrayList<>();
 
-    public void addBillDetail(@NonNull BillDetail billDetail) {
+    public void addBillDetail(@NotNull BillDetail billDetail) {
         if (!this.billDetails.contains(billDetail)) {
             this.billDetails.add(billDetail);
             billDetail.setFood(this);
         }
     }
 
-    public void removeBillDetail(@NonNull BillDetail billDetail) {
+    public void removeBillDetail(@NotNull BillDetail billDetail) {
         if (this.billDetails.contains(billDetail)) {
             this.billDetails.remove(billDetail);
             billDetail.setFood(null);
         }
     }
 
-    public void addVoucher(@NonNull Voucher voucher) {
+    public void addVoucher(@NotNull Voucher voucher) {
         if (!this.vouchers.contains(voucher)) {
             this.vouchers.add(voucher);
             voucher.setFood(this);
         }
     }
 
-    public void removeVoucher(@NonNull Voucher voucher) {
+    public void removeVoucher(@NotNull Voucher voucher) {
         if (this.vouchers.contains(voucher)) {
             this.vouchers.remove(voucher);
             voucher.setFood(null);
         }
     }
 
-    public void addCartDetail(@NonNull CartDetail cartDetail) {
+    public void addCartDetail(@NotNull CartDetail cartDetail) {
         if (!this.cartDetails.contains(cartDetail)) {
             this.cartDetails.add(cartDetail);
             cartDetail.setFood(this);
         }
     }
 
-    public void removeCartDetail(@NonNull CartDetail cartDetail) {
+    public void removeCartDetail(@NotNull CartDetail cartDetail) {
         if (this.cartDetails.contains(cartDetail)) {
             this.cartDetails.remove(cartDetail);
             cartDetail.setFood(null);
         }
     }
 
-    public void addShopFood(@NonNull ShopFood shopFood) {
+    public void addShopFood(@NotNull ShopFood shopFood) {
         if (!this.shopFoods.contains(shopFood)) {
             this.shopFoods.add(shopFood);
             shopFood.setFood(this);
         }
     }
 
-    public void removeShopFood(@NonNull ShopFood shopFood) {
+    public void removeShopFood(@NotNull ShopFood shopFood) {
         if (this.shopFoods.contains(shopFood)) {
             this.shopFoods.remove(shopFood);
             shopFood.setFood(null);
         }
     }
 
-    public void addEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+    public void addEvaluationFood(@NotNull EvaluationFood evaluationFood) {
         if (!this.evaluationFoods.contains(evaluationFood)) {
             this.evaluationFoods.add(evaluationFood);
             evaluationFood.setFood(this);
         }
     }
 
-    public void removeEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+    public void removeEvaluationFood(@NotNull EvaluationFood evaluationFood) {
         if (this.evaluationFoods.contains(evaluationFood)) {
             this.evaluationFoods.remove(evaluationFood);
             evaluationFood.setFood(null);

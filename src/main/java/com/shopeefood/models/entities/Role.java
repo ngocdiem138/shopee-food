@@ -5,12 +5,12 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -47,14 +47,14 @@ public class Role extends Base {
     @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<>();
 
-    public void addUser(@NonNull User user) {
+    public void addUser(@NotNull User user) {
         if (!this.users.contains(user)) {
             this.users.add(user);
             user.setRole(this);
         }
     }
 
-    public void removeUser(@NonNull User user) {
+    public void removeUser(@NotNull User user) {
         if (this.users.contains(user)) {
             this.users.remove(user);
             user.setRole(null);

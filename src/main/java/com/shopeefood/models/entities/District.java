@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,14 +47,14 @@ public class District extends Base {
     @OneToMany(mappedBy = "district")
     private List<Ward> wards = new ArrayList<>();
 
-    public void addWard(@NonNull Ward ward) {
+    public void addWard(@NotNull Ward ward) {
         if (!this.wards.contains(ward)) {
             this.wards.add(ward);
             ward.setDistrict(this);
         }
     }
 
-    public void removeWard(@NonNull Ward ward) {
+    public void removeWard(@NotNull Ward ward) {
         if (!this.wards.contains(ward)) {
             this.wards.remove(ward);
             ward.setDistrict(null);

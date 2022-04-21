@@ -5,12 +5,12 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.*;
-import static lombok.AccessLevel.*;
+import static javax.persistence.GenerationType.SEQUENCE;
+import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
 @Table
@@ -52,28 +52,28 @@ public class Location extends Base {
     @OneToMany(mappedBy = "location")
     private List<Shop> shops = new ArrayList<>();
 
-    public void addUser(@NonNull User user) {
+    public void addUser(@NotNull User user) {
         if (!this.users.contains(user)) {
             this.users.add(user);
             user.setLocation(this);
         }
     }
 
-    public void removeUser(@NonNull User user) {
+    public void removeUser(@NotNull User user) {
         if (this.users.contains(user)) {
             this.users.remove(user);
             user.setLocation(null);
         }
     }
 
-    public void addShop(@NonNull Shop shop) {
+    public void addShop(@NotNull Shop shop) {
         if (!this.shops.contains(shop)) {
             this.shops.add(shop);
             shop.setLocation(this);
         }
     }
 
-    public void removeShop(@NonNull Shop shop) {
+    public void removeShop(@NotNull Shop shop) {
         if (!this.shops.contains(shop)) {
             this.shops.remove(shop);
             shop.setLocation(null);

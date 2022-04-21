@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,14 +42,14 @@ public class Cart extends Base {
     @OneToMany(mappedBy = "cart")
     private List<CartDetail> cartDetails = new ArrayList<>();
 
-    public void addCartDetail(@NonNull CartDetail cartDetail) {
+    public void addCartDetail(@NotNull CartDetail cartDetail) {
         if (!this.cartDetails.contains(cartDetail)) {
             this.cartDetails.add(cartDetail);
             cartDetail.setCart(this);
         }
     }
 
-    public void removeCartDetail(@NonNull CartDetail cartDetail) {
+    public void removeCartDetail(@NotNull CartDetail cartDetail) {
         if (this.cartDetails.contains(cartDetail)) {
             this.cartDetails.remove(cartDetail);
             cartDetail.setCart(null);

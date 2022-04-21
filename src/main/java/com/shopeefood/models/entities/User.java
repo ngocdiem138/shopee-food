@@ -8,6 +8,7 @@ import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,63 +107,63 @@ public class User extends Base {
     @ManyToMany(mappedBy = "staffs")
     private List<Shop> staffOfShops = new ArrayList<>();
 
-    public void addCart(@NonNull Cart cart) {
+    public void addCart(@NotNull Cart cart) {
         if (!this.carts.contains(cart)) {
             this.carts.add(cart);
             cart.setUser(this);
         }
     }
 
-    public void removeCart(@NonNull Cart cart) {
+    public void removeCart(@NotNull Cart cart) {
         if (this.carts.contains(cart)) {
             this.carts.remove(cart);
             cart.setUser(null);
         }
     }
 
-    public void addEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+    public void addEvaluationFood(@NotNull EvaluationFood evaluationFood) {
         if (!this.evaluationFoods.contains(evaluationFood)) {
             this.evaluationFoods.add(evaluationFood);
             evaluationFood.setUser(this);
         }
     }
 
-    public void removeEvaluationFood(@NonNull EvaluationFood evaluationFood) {
+    public void removeEvaluationFood(@NotNull EvaluationFood evaluationFood) {
         if (this.evaluationFoods.contains(evaluationFood)) {
             this.evaluationFoods.remove(evaluationFood);
             evaluationFood.setUser(null);
         }
     }
 
-    public void addEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+    public void addEvaluationShop(@NotNull EvaluationShop evaluationShop) {
         if (!this.evaluationShops.contains(evaluationShop)) {
             this.evaluationShops.add(evaluationShop);
             evaluationShop.setUser(this);
         }
     }
 
-    public void removeEvaluationShop(@NonNull EvaluationShop evaluationShop) {
+    public void removeEvaluationShop(@NotNull EvaluationShop evaluationShop) {
         if (this.evaluationShops.contains(evaluationShop)) {
             this.evaluationShops.remove(evaluationShop);
             evaluationShop.setUser(null);
         }
     }
 
-    public void addBossOfShop(@NonNull Shop shop) {
+    public void addBossOfShop(@NotNull Shop shop) {
         if (!this.bossOfShops.contains(shop)) {
             this.bossOfShops.add(shop);
             shop.setUserBoss(this);
         }
     }
 
-    public void removeBossOfShop(@NonNull Shop shop) {
+    public void removeBossOfShop(@NotNull Shop shop) {
         if (this.bossOfShops.contains(shop)) {
             this.bossOfShops.remove(shop);
             shop.setUserBoss(null);
         }
     }
 
-    public void addVoucher(@NonNull Voucher voucher) {
+    public void addVoucher(@NotNull Voucher voucher) {
         if (!this.vouchers.contains(voucher)) {
             this.vouchers.add(voucher);
             voucher.getUsers().add(this);
@@ -170,7 +171,7 @@ public class User extends Base {
         }
     }
 
-    public void removeVoucher(@NonNull Voucher voucher) {
+    public void removeVoucher(@NotNull Voucher voucher) {
         if (this.vouchers.contains(voucher)) {
             this.vouchers.remove(voucher);
             voucher.getUsers().remove(this);
@@ -178,7 +179,7 @@ public class User extends Base {
         }
     }
 
-    public void addStaffOfShop(@NonNull Shop shop) {
+    public void addStaffOfShop(@NotNull Shop shop) {
         if (!this.staffOfShops.contains(shop)) {
             this.staffOfShops.add(shop);
             shop.getStaffs().add(this);
@@ -186,7 +187,7 @@ public class User extends Base {
         }
     }
 
-    public void removeStaffOfShop(@NonNull Shop shop) {
+    public void removeStaffOfShop(@NotNull Shop shop) {
         if (this.staffOfShops.contains(shop)) {
             this.staffOfShops.remove(shop);
             shop.getStaffs().remove(this);

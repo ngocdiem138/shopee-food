@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,25 +60,25 @@ public class Bill extends Base {
     @OneToMany(mappedBy = "bill")
     private List<BillDetail> billDetails = new ArrayList<>();
 
-    public void addBillDetail(@NonNull BillDetail billDetail) {
+    public void addBillDetail(@NotNull BillDetail billDetail) {
         if (!this.billDetails.contains(billDetail)) {
             this.billDetails.add(billDetail);
             billDetail.setBill(this);
         }
     }
 
-    public void removeBillDetail(@NonNull BillDetail billDetail) {
+    public void removeBillDetail(@NotNull BillDetail billDetail) {
         if (this.billDetails.contains(billDetail)) {
             this.billDetails.remove(billDetail);
             billDetail.setBill(null);
         }
     }
 
-    public void setTotalMoney(@NonNull List<BillDetail> billDetails) {
+    public void setTotalMoney(@NotNull List<BillDetail> billDetails) {
         this.totalMoney = billDetails.stream().mapToDouble(BillDetail::getMoney).sum() + transportMoney.getMoney();
     }
 
-    public void setTransportMoney(@NonNull Location locationShop, @NonNull Location locationUser) {
+    public void setTransportMoney(@NotNull Location locationShop, @NotNull Location locationUser) {
         double distance = 100;
 //        this.transportMoney = transportMoneyService.getTransportMoneyByDistance(distance);
     }

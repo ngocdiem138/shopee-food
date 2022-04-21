@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,21 +78,21 @@ public class Voucher extends Base {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users = new ArrayList<>();
 
-    public void addBillDetail(@NonNull BillDetail billDetail) {
+    public void addBillDetail(@NotNull BillDetail billDetail) {
         if (!this.billDetails.contains(billDetail)) {
             this.billDetails.add(billDetail);
             billDetail.setVoucher(this);
         }
     }
 
-    public void removeBillDetail(@NonNull BillDetail billDetail) {
+    public void removeBillDetail(@NotNull BillDetail billDetail) {
         if (this.billDetails.contains(billDetail)) {
             this.billDetails.remove(billDetail);
             billDetail.setVoucher(null);
         }
     }
 
-    public void addUser(@NonNull User user) {
+    public void addUser(@NotNull User user) {
         if (!this.users.contains(user)) {
             this.users.add(user);
             user.getVouchers().add(this);
@@ -99,7 +100,7 @@ public class Voucher extends Base {
         }
     }
 
-    public void removeUser(@NonNull User user) {
+    public void removeUser(@NotNull User user) {
         if (this.users.contains(user)) {
             this.users.remove(user);
             user.getVouchers().remove(this);

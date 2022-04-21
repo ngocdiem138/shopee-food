@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,14 +47,14 @@ public class Province extends Base {
     @OneToMany(mappedBy = "province")
     private List<District> districts = new ArrayList<>();
 
-    public void addDistrict(@NonNull District district) {
+    public void addDistrict(@NotNull District district) {
         if (!this.districts.contains(district)) {
             this.districts.add(district);
             district.setProvince(this);
         }
     }
 
-    public void removeDistrict(@NonNull District district) {
+    public void removeDistrict(@NotNull District district) {
         if (this.districts.contains(district)) {
             this.districts.remove(district);
             district.setProvince(null);

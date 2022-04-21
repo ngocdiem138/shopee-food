@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,14 +47,14 @@ public class Ward extends Base {
     @OneToMany(mappedBy = "ward")
     private List<Location> locations = new ArrayList<>();
 
-    public void addLocation(@NonNull Location location) {
+    public void addLocation(@NotNull Location location) {
         if (!this.locations.contains(location)) {
             this.locations.add(location);
             location.setWard(this);
         }
     }
 
-    public void removeLocation(@NonNull Location location) {
+    public void removeLocation(@NotNull Location location) {
         if (this.locations.contains(location)) {
             this.locations.remove(location);
             location.setWard(null);
