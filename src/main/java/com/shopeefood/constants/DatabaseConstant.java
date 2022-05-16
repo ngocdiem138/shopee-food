@@ -1,8 +1,18 @@
 package com.shopeefood.constants;
 
-public interface DatabaseConstant {
-    String DRIVER = "com.mysql.jdbc.Driver";
-    String URL = "jdbc:mysql://127.0.0.1:3306/shopee_food_db?createDatabaseIfNotExist=true";
-    String USERNAME = "root";
-    String PASSWORD = "12345";
+import org.springframework.beans.factory.annotation.Value;
+
+public class DatabaseConstant {
+
+    @Value("${database.driver}")
+    public static String DRIVER;
+
+    @Value("${database.url}")
+    public static String URL;
+
+    @Value("${database.username}")
+    public static String USERNAME;
+
+    @Value("${database.password}")
+    public static String PASSWORD;
 }

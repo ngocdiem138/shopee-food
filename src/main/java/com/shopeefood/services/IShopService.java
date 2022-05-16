@@ -1,7 +1,9 @@
 package com.shopeefood.services;
 
-import org.springframework.stereotype.Service;
+import com.shopeefood.models.entities.Shop;
 
-@Service
 public interface IShopService {
+
+    Shop getShop(Long id);
+
 }
