@@ -42,18 +42,4 @@ public class Country extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "country")
     private List<Province> provinces = new ArrayList<>();
-
-    public void addProvince(@NotNull Province province) {
-        if (!this.provinces.contains(province)) {
-            this.provinces.add(province);
-            province.setCountry(this);
-        }
-    }
-
-    public void removeProvince(@NotNull Province province) {
-        if (this.provinces.contains(province)) {
-            this.provinces.remove(province);
-            province.setCountry(null);
-        }
-    }
 }

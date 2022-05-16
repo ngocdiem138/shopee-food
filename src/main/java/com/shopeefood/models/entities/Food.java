@@ -49,7 +49,7 @@ public class Food extends Base {
     private Double price;
 
     @Column(nullable = false)
-    private Byte[] image;
+    private String image;
 
     @ManyToOne
     @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "food_category_id_fk"))
@@ -83,74 +83,4 @@ public class Food extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "food")
     private List<EvaluationFood> evaluationFoods = new ArrayList<>();
-
-    public void addBillDetail(@NotNull BillDetail billDetail) {
-        if (!this.billDetails.contains(billDetail)) {
-            this.billDetails.add(billDetail);
-            billDetail.setFood(this);
-        }
-    }
-
-    public void removeBillDetail(@NotNull BillDetail billDetail) {
-        if (this.billDetails.contains(billDetail)) {
-            this.billDetails.remove(billDetail);
-            billDetail.setFood(null);
-        }
-    }
-
-    public void addVoucher(@NotNull Voucher voucher) {
-        if (!this.vouchers.contains(voucher)) {
-            this.vouchers.add(voucher);
-            voucher.setFood(this);
-        }
-    }
-
-    public void removeVoucher(@NotNull Voucher voucher) {
-        if (this.vouchers.contains(voucher)) {
-            this.vouchers.remove(voucher);
-            voucher.setFood(null);
-        }
-    }
-
-    public void addCartDetail(@NotNull CartDetail cartDetail) {
-        if (!this.cartDetails.contains(cartDetail)) {
-            this.cartDetails.add(cartDetail);
-            cartDetail.setFood(this);
-        }
-    }
-
-    public void removeCartDetail(@NotNull CartDetail cartDetail) {
-        if (this.cartDetails.contains(cartDetail)) {
-            this.cartDetails.remove(cartDetail);
-            cartDetail.setFood(null);
-        }
-    }
-
-    public void addShopFood(@NotNull ShopFood shopFood) {
-        if (!this.shopFoods.contains(shopFood)) {
-            this.shopFoods.add(shopFood);
-            shopFood.setFood(this);
-        }
-    }
-
-    public void removeShopFood(@NotNull ShopFood shopFood) {
-        if (this.shopFoods.contains(shopFood)) {
-            this.shopFoods.remove(shopFood);
-            shopFood.setFood(null);
-        }
-    }
-
-    public void addEvaluationFood(@NotNull EvaluationFood evaluationFood) {
-        if (!this.evaluationFoods.contains(evaluationFood)) {
-            this.evaluationFoods.add(evaluationFood);
-            evaluationFood.setFood(this);
-        }
-    }
-
-    public void removeEvaluationFood(@NotNull EvaluationFood evaluationFood) {
-        if (this.evaluationFoods.contains(evaluationFood)) {
-            this.evaluationFoods.remove(evaluationFood);
-            evaluationFood.setFood(null);
-        }
-    }
 }

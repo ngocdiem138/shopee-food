@@ -47,17 +47,4 @@ public class Role extends Base {
     @OneToMany(mappedBy = "role")
     private List<User> users = new ArrayList<>();
 
-    public void addUser(@NotNull User user) {
-        if (!this.users.contains(user)) {
-            this.users.add(user);
-            user.setRole(this);
-        }
-    }
-
-    public void removeUser(@NotNull User user) {
-        if (this.users.contains(user)) {
-            this.users.remove(user);
-            user.setRole(null);
-        }
-    }
 }

@@ -42,18 +42,4 @@ public class Menu extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "menu")
     private List<Food> foods = new ArrayList<>();
-
-    public void addFood(@NotNull Food food) {
-        if (!this.foods.contains(food)) {
-            this.foods.add(food);
-            food.setMenu(this);
-        }
-    }
-
-    public void removeFood(@NotNull Food food) {
-        if (this.foods.contains(food)) {
-            this.foods.remove(food);
-            food.setMenu(null);
-        }
-    }
 }

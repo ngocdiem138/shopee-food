@@ -60,20 +60,6 @@ public class Bill extends Base {
     @OneToMany(mappedBy = "bill")
     private List<BillDetail> billDetails = new ArrayList<>();
 
-    public void addBillDetail(@NotNull BillDetail billDetail) {
-        if (!this.billDetails.contains(billDetail)) {
-            this.billDetails.add(billDetail);
-            billDetail.setBill(this);
-        }
-    }
-
-    public void removeBillDetail(@NotNull BillDetail billDetail) {
-        if (this.billDetails.contains(billDetail)) {
-            this.billDetails.remove(billDetail);
-            billDetail.setBill(null);
-        }
-    }
-
     public void setTotalMoney(@NotNull List<BillDetail> billDetails) {
         this.totalMoney = billDetails.stream().mapToDouble(BillDetail::getMoney).sum() + transportMoney.getMoney();
     }

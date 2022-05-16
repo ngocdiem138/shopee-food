@@ -60,7 +60,7 @@ public class Shop extends Base {
     private Float evaluationLevel;
 
     @Column(nullable = false)
-    private Byte[] image;
+    private String image;
 
     @Transient
     @Setter(NONE)
@@ -108,78 +108,6 @@ public class Shop extends Base {
             joinColumns = @JoinColumn(name = "shop_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> staffs = new ArrayList<>();
-
-    public void addBill(@NotNull Bill bill) {
-        if (!this.bills.contains(bill)) {
-            this.bills.add(bill);
-            bill.setShop(this);
-        }
-    }
-
-    public void removeBill(@NotNull Bill bill) {
-        if (this.bills.contains(bill)) {
-            this.bills.remove(bill);
-            bill.setShop(null);
-        }
-    }
-
-    public void addShopFood(@NotNull ShopFood shopFood) {
-        if (!this.shopFoods.contains(shopFood)) {
-            this.shopFoods.add(shopFood);
-            shopFood.setShop(this);
-        }
-    }
-
-    public void removeShopFood(@NotNull ShopFood shopFood) {
-        if (this.shopFoods.contains(shopFood)) {
-            this.shopFoods.remove(shopFood);
-            shopFood.setShop(null);
-        }
-    }
-
-    public void addVoucher(@NotNull Voucher voucher) {
-        if (!this.vouchers.contains(voucher)) {
-            this.vouchers.add(voucher);
-            voucher.setShop(this);
-        }
-    }
-
-    public void removeVoucher(@NotNull Voucher voucher) {
-        if (this.vouchers.contains(voucher)) {
-            this.vouchers.remove(voucher);
-            voucher.setShop(null);
-        }
-    }
-
-    public void addEvaluationShop(@NotNull EvaluationShop evaluationShop) {
-        if (!this.evaluationShops.contains(evaluationShop)) {
-            this.evaluationShops.add(evaluationShop);
-            evaluationShop.setShop(this);
-        }
-    }
-
-    public void removeEvaluationShop(@NotNull EvaluationShop evaluationShop) {
-        if (this.evaluationShops.contains(evaluationShop)) {
-            this.evaluationShops.remove(evaluationShop);
-            evaluationShop.setShop(null);
-        }
-    }
-
-    public void addStaff(@NotNull User staff) {
-        if (!this.staffs.contains(staff)) {
-            this.staffs.add(staff);
-            staff.getStaffOfShops().add(this);
-            staff.setStaffOfShops(staff.getStaffOfShops());
-        }
-    }
-
-    public void removeStaff(@NotNull User staff) {
-        if (this.staffs.contains(staff)) {
-            this.staffs.remove(staff);
-            staff.getStaffOfShops().remove(this);
-            staff.setStaffOfShops(staff.getStaffOfShops());
-        }
-    }
 
     public void setOpenTime(@NotNull List<TimeMapCustom<LocalTime, LocalTime>> timeMapCustomizations) {
         this.openTime = TimeMapCustom.getStringFromListTimeMapCustom(timeMapCustomizations);

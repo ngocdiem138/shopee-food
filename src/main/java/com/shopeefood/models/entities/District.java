@@ -46,18 +46,4 @@ public class District extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "district")
     private List<Ward> wards = new ArrayList<>();
-
-    public void addWard(@NotNull Ward ward) {
-        if (!this.wards.contains(ward)) {
-            this.wards.add(ward);
-            ward.setDistrict(this);
-        }
-    }
-
-    public void removeWard(@NotNull Ward ward) {
-        if (!this.wards.contains(ward)) {
-            this.wards.remove(ward);
-            ward.setDistrict(null);
-        }
-    }
 }

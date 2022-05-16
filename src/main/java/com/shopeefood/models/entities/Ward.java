@@ -46,18 +46,4 @@ public class Ward extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "ward")
     private List<Location> locations = new ArrayList<>();
-
-    public void addLocation(@NotNull Location location) {
-        if (!this.locations.contains(location)) {
-            this.locations.add(location);
-            location.setWard(this);
-        }
-    }
-
-    public void removeLocation(@NotNull Location location) {
-        if (this.locations.contains(location)) {
-            this.locations.remove(location);
-            location.setWard(null);
-        }
-    }
 }

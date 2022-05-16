@@ -77,34 +77,4 @@ public class Voucher extends Base {
             joinColumns = @JoinColumn(name = "voucher_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users = new ArrayList<>();
-
-    public void addBillDetail(@NotNull BillDetail billDetail) {
-        if (!this.billDetails.contains(billDetail)) {
-            this.billDetails.add(billDetail);
-            billDetail.setVoucher(this);
-        }
-    }
-
-    public void removeBillDetail(@NotNull BillDetail billDetail) {
-        if (this.billDetails.contains(billDetail)) {
-            this.billDetails.remove(billDetail);
-            billDetail.setVoucher(null);
-        }
-    }
-
-    public void addUser(@NotNull User user) {
-        if (!this.users.contains(user)) {
-            this.users.add(user);
-            user.getVouchers().add(this);
-            user.setVouchers(user.getVouchers());
-        }
-    }
-
-    public void removeUser(@NotNull User user) {
-        if (this.users.contains(user)) {
-            this.users.remove(user);
-            user.getVouchers().remove(this);
-            user.setVouchers(user.getVouchers());
-        }
-    }
 }

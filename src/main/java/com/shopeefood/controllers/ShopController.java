@@ -15,6 +15,10 @@ public class ShopController {
 
     private final IShopService shopService;
 
+    public ShopController(IShopService shopService) {
+        this.shopService = shopService;
+    }
+
     @GetMapping(path = "{shopId}")
     public ModelAndView shopPage(@PathVariable("shopId") Long shopId) {
         ModelAndView mav = new ModelAndView("client/shop");

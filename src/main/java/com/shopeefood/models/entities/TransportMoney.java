@@ -46,18 +46,4 @@ public class TransportMoney extends Base {
     @ToString.Exclude
     @OneToMany(mappedBy = "transportMoney")
     private List<Bill> bills = new ArrayList<>();
-
-    public void addBill(@NotNull Bill bill) {
-        if (!this.bills.contains(bill)) {
-            this.bills.add(bill);
-            bill.setTransportMoney(this);
-        }
-    }
-
-    public void removeBill(@NotNull Bill bill) {
-        if (this.bills.contains(bill)) {
-            this.bills.remove(bill);
-            bill.setTransportMoney(null);
-        }
-    }
 }

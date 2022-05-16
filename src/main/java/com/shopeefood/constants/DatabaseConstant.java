@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class DatabaseConstant {
 
-    @Value("${database.drive}")
+    @Value("${database.driver}")
     public static String DRIVER;
 
     @Value("${database.url}")
     public static String URL;
 
-    @Value("&{database.username}")
+    @Value("${database.username}")
     public static String USERNAME;
 
     @Value("${database.password}")
