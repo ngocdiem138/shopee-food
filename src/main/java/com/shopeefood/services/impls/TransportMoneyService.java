@@ -1,9 +1,12 @@
 package com.shopeefood.services.impls;
 
-import com.shopeefood.entities.TransportMoney;
+import com.shopeefood.models.entities.TransportMoney;
 import com.shopeefood.repositories.ITransportMoneyRepository;
 import com.shopeefood.services.ITransportMoneyService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
 
 @AllArgsConstructor
 public class TransportMoneyService implements ITransportMoneyService {
