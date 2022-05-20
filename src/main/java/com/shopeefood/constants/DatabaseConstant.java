@@ -1,18 +1,8 @@
 package com.shopeefood.constants;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public class DatabaseConstant {
-
-    @Value("${database.driver}")
-    public static String DRIVER;
-
-    @Value("${database.url}")
-    public static String URL;
-
-    @Value("${database.username}")
-    public static String USERNAME;
-
-    @Value("${database.password}")
-    public static String PASSWORD;
+    public static String DRIVER = "com.mysql.jdbc.Driver";
+    public static String URL = "jdbc:mysql://localhost:3306/shopee_food_db";
+    public static String USERNAME = "root";
+    public static String PASSWORD = "123456";
 }

@@ -215,7 +215,7 @@ a {
     left: 0;
     right: 0;
     z-index: 0;
-    background-image: url(/asset/img/main-banner.jpg);
+    background-image: url('/templates/web/header/img/main-banner.jpg');
     background-size: cover;
     overflow: hidden;
 }

@@ -11,16 +11,16 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring.framework.version>5.3.18</spring.framework.version>
-        <spring.framework.security>5.6.2</spring.framework.security>
+        <spring.framework.version>5.3.20</spring.framework.version>
+        <spring.framework.security>5.6.3</spring.framework.security>
         <sitemesh.version>2.4.2</sitemesh.version>
         <jstl.version>1.2</jstl.version>
-        <mysql.connector.version>8.0.28</mysql.connector.version>
-        <spring.framework.data.jpa.version>2.6.3</spring.framework.data.jpa.version>
-        <lombok.version>1.18.22</lombok.version>
+        <mysql.connector.version>8.0.29</mysql.connector.version>
+        <spring.framework.data.jpa.version>2.7.0</spring.framework.data.jpa.version>
+        <lombok.version>1.18.24</lombok.version>
         <javax.persistence.version>2.2</javax.persistence.version>
-        <hibernate.core.version>5.6.7.Final</hibernate.core.version>
-        <hibernate.entitymanager.version>5.6.7.Final</hibernate.entitymanager.version>
+        <hibernate.core.version>5.6.5.Final</hibernate.core.version>
+        <hibernate.entitymanager.version>5.6.8.Final</hibernate.entitymanager.version>
         <validation.api>2.0.1.Final</validation.api>
         <gson.version>2.9.0</gson.version>
         <querydsl.version>5.0.0</querydsl.version>
@@ -165,6 +165,23 @@
             <version>3.1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl-api</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
