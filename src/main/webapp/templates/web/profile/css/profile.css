@@ -1,0 +1,227 @@
+.container-profile {
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: block;
+    margin-top: 70px;
+}
+
+/* common */
+.profile-btn {
+    background-color: #4073a7;
+    border-color: #4073a7;
+    color: #fff;
+    border: 1px solid #0288d1;
+    border-radius: 6px;
+    padding: 0.23rem 0.6rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.typePassword {
+    -webkit-text-security: disc;
+    height: 20px;
+    width: 100px;
+    -webkit-appearance: textfield;
+}
+
+/* ----------- */
+.profile-right-navigation {
+    /* display: flex; */
+    background-color: #fff;
+    border-radius: 4px;
+    float: left;
+    box-shadow: 0 0 3px 0 rgb(50 50 50 / 30%);
+    width: 25%;
+    margin-top: 35px;
+    padding: 5px 16px 0;
+    min-height: 428px;
+}
+
+/* -----------Ten ---------------- */
+.profile-right-navigation .name {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-right-navigation .avt {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.profile-right-navigation .avt img {
+
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ebebeb;
+}
+
+.profile-right-navigation .name #text {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* ------------------Cap nhat tai khoan----------- */
+.profile-right-navigation .update-account {
+    display: flex;
+    width: auto;
+    max-width: none;
+    padding-top: 10px;
+}
+
+.profile-right-navigation .update-account #text {
+    margin-left: 20px;
+    margin-top: -3px;
+}
+
+/* ------------------Thong tin don hang ----------- */
+.profile-right-navigation .info-oder {
+    display: flex;
+    width: auto;
+    max-width: none;
+    padding-top: 10px;
+}
+
+.profile-right-navigation .info-oder #text {
+    margin-left: 20px;
+    margin-top: -3px;
+}
+
+/*  */
+.profile-left-navigation {
+    float: right;
+    width: 70%;
+    min-height: 428px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0 rgb(50 50 50 / 30%);
+    margin-top: 35px;
+}
+
+.profile-left-navigation .update-avt .update {
+    display: flex;
+}
+
+.profile-left-navigation .title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #4073a7;
+    padding-bottom: 20px;
+    position: relative;
+    padding: 30px;
+}
+
+.profile-left-navigation .left {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.profile-left-navigation .right {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.profile-left-navigation .header {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    padding: 16px 15px;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+    background: #f5f5f5;
+}
+
+/*  */
+.profile-left-navigation .update {
+    padding: 30px;
+}
+
+.profile-left-navigation .body .avt img {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+
+}
+
+.profile-left-navigation .right .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.profile-left-navigation .right .form-group #notice {
+    margin-right: 2%;
+
+}
+
+.profile-left-navigation .form-user-detail .row-info {
+    display: flex;
+    margin-bottom: 5%;
+
+}
+
+.profile-left-navigation .form-user-detail .row-info .key-name {
+    position: relative;
+    width: 25%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 30px;
+    min-width: 0;
+}
+
+.profile-left-navigation .form-user-detail .row-info .key-value {
+    display: block;
+    width: 33%;
+    padding: 0.23rem 0.6rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #6d6f71;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.profile-left-navigation .form-user-detail button {
+    margin-left: 5%;
+}
+
+.profile-left-navigation .update-phone {
+    padding-left: 30px;
+}
+
+.profile-left-navigation .update-phone .phone {
+    display: flex;
+}
+
+.profile-left-navigation .update-phone .phone span {
+    font-weight: bold;
+}
+
+.profile-left-navigation .update-phone .phone i {
+    margin-left: 10%;
+    color: green;
+}
+
+.profile-left-navigation .update-phone button {
+    margin-top: 5%;
+}
+
+@media all and (min-width: 800px) and (max-width: 1024px) {
+}
+
+/*
+max 1150
+max 1000 
+max 9000
+max 838
+max 680
+*/

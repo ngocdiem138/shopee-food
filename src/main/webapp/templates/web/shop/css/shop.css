@@ -3,19 +3,23 @@
     padding-top: 30px;
     margin-top: 70px;
 }
+
 .container, .container-fluid {
     width: 1200px;
     margin-right: auto;
     margin-left: auto;
 }
+
 .now-detail-restaurant {
     background-color: #fff;
     padding-top: 30px;
 }
+
 .now-detail-restaurant .rating {
     margin-bottom: 4px;
     font-size: 14px;
 }
+
 .now-detail-restaurant .breadcrumb {
     padding-left: 0;
     margin-bottom: 18px;
@@ -23,28 +27,34 @@
     overflow: hidden;
     margin-top: -2px;
 }
+
 .now-detail-restaurant .address-restaurant {
     font-size: 13px;
     margin-bottom: 2px;
 }
+
 .relative {
-    position: relative!important;
+    position: relative !important;
 }
+
 img {
     vertical-align: middle;
     border-style: none;
 }
+
 .now-detail-restaurant .detail-restaurant-info {
     color: #252525;
     float: right;
     width: 645px;
     padding-bottom: 15px;
 }
+
 .now-menu-restaurant .menu-restaurant-tab .item.active {
     font-weight: 700;
     color: #cf2127;
     cursor: default;
 }
+
 .now-menu-restaurant .menu-restaurant-tab .item {
     color: #6d6f71;
     text-transform: uppercase;
@@ -52,18 +62,22 @@ img {
     display: inline-block;
     padding: 13px 26px;
 }
+
 .rating .stars {
     font-size: 14px;
     color: #ffc107;
     display: inline-block;
 }
+
 .now-detail-restaurant .number-review {
     font-size: 14px;
 }
+
 .now-detail-restaurant .cost-restaurant {
     color: #959595;
     font-size: 15px;
 }
+
 .now-detail-restaurant .cost-restaurant .fas {
     text-align: center;
     font-size: 8px;
@@ -76,14 +90,17 @@ img {
     margin-top: 3px;
     margin-right: 3px;
 }
+
 .fa, .fas {
     font-weight: 900;
 }
+
 .now-detail-restaurant .utility-restaurant .utility-title {
     color: #959595;
     font-size: 13px;
     text-transform: uppercase;
 }
+
 .now-detail-restaurant .utility-restaurant .utility-item {
     float: left;
     width: 140px;
@@ -91,17 +108,21 @@ img {
     padding: 10px;
     margin-bottom: 30px;
 }
+
 .now-detail-restaurant .utility-restaurant .utility-content {
     font-size: 14px;
 }
+
 .menu-restaurant-content-tab {
     position: relative;
 }
+
 .now-menu-restaurant .menu-restaurant-category {
     position: absolute;
     top: 0;
     left: 0;
 }
+
 .menu-restaurant-category {
     border: 1px solid #ebebeb;
     padding: 15px 5px 15px 15px;
@@ -110,9 +131,11 @@ img {
     background: #fff;
     border-radius: 4px;
 }
+
 .menu-restaurant-category .list-category {
     position: relative;
 }
+
 .menu-restaurant-category .list-category .item {
     white-space: nowrap;
     overflow: hidden;
@@ -120,10 +143,12 @@ img {
     margin: 5px 0;
     padding: 2px 0;
 }
+
 .menu-restaurant-category .list-category .item-link.active {
     background-color: #959595;
     color: #fff;
 }
+
 .menu-restaurant-category .list-category .item-link {
     font-size: 13px;
     display: inline-block;
@@ -133,28 +158,33 @@ img {
     border-radius: 4px;
     cursor: pointer;
 }
+
 .ps__rail-x, .ps__rail-y {
     display: none;
     opacity: 0;
-    transition: background-color .2s linear,opacity .2s linear;
-    -webkit-transition: background-color .2s linear,opacity .2s linear;
+    transition: background-color .2s linear, opacity .2s linear;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
     position: absolute;
 }
+
 .ps__rail-x {
     height: 15px;
     bottom: 0;
 }
+
 .menu-restaurant-category .scrollbar-container {
     max-height: calc(100vh - 100px);
     position: relative;
 }
+
 .ps {
-    overflow: hidden!important;
+    overflow: hidden !important;
     overflow-anchor: none;
     -ms-overflow-style: none;
     touch-action: auto;
     -ms-touch-action: auto;
 }
+
 .menu-restaurant-detail {
     width: 700px;
     padding: 6px 15px;
@@ -163,20 +193,24 @@ img {
     border-radius: 4px;
     background: #fff;
 }
+
 .now-detail-restaurant .breadcrumb .breadcrumb-item {
     float: left;
     position: relative;
     padding-right: 4px;
 }
+
 .now-detail-restaurant .breadcrumb .breadcrumb-item:after {
     content: "\BB";
     color: #0288d1;
     display: inline-block;
     padding-left: 4px;
 }
+
 .menu-restaurant-detail .promotions-order {
-    display: block!important;
+    display: block !important;
 }
+
 .menu-restaurant-detail .promotions-order {
     background-color: #fbf9d8;
     position: relative;
@@ -187,9 +221,11 @@ img {
     padding: 2px 15px 0 89px;
     display: none;
 }
+
 .menu-restaurant-list, body {
     position: relative;
 }
+
 .menu-restaurant-list .search-items {
     position: -webkit-sticky;
     position: sticky;
@@ -198,11 +234,13 @@ img {
     z-index: 2;
     padding: 15px 0 10px;
 }
+
 .menu-restaurant-list .search-items .input-group {
     margin: 0;
     position: relative;
     color: #46464c;
 }
+
 .input-group {
     position: relative;
     display: -ms-flexbox;
@@ -213,24 +251,30 @@ img {
     align-items: stretch;
     width: 100%;
 }
+
 p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
 .menu-restaurant-list .search-items .input-group .fa-search {
     left: 0;
 }
+
 .menu-restaurant-list .search-items .input-group i {
     position: absolute;
     padding: 15px;
     line-height: 10px;
 }
+
 .fa, .fas {
     font-weight: 900;
 }
+
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
 }
+
 .menu-restaurant-list .search-items .input-group input {
     width: 100%;
     padding: 0 40px;
@@ -238,18 +282,21 @@ p {
     border: 1px solid #ededed;
     height: 40px;
 }
+
 .menu-restaurant-list .title-menu {
     text-transform: uppercase;
     color: #6d6f71;
     padding: 5px 0 0;
     margin: 10px 0 20px;
 }
+
 .menu-restaurant-list .item-restaurant-row {
     padding-top: 10px;
     border-bottom: 1px solid #f5f5f5;
     padding-bottom: 10px;
     position: relative;
 }
+
 .col-auto {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -258,6 +305,7 @@ p {
     padding-right: 10px;
     padding-left: 10px;
 }
+
 .row {
     display: -ms-flexbox;
     display: flex;
@@ -266,23 +314,28 @@ p {
     margin-right: -10px;
     margin-left: -10px;
 }
+
 .menu-restaurant-list .item-restaurant-row .item-restaurant-img button {
-    background: none!important;
+    background: none !important;
     color: inherit;
     border: none;
-    padding: 0!important;
+    padding: 0 !important;
     font: inherit;
     cursor: pointer;
 }
+
 [type=reset], [type=submit], button, html [type=button] {
     -webkit-appearance: button;
 }
+
 button, select {
     text-transform: none;
 }
+
 button, input {
     overflow: visible;
 }
+
 .item-restaurant-row .item-restaurant-name {
     color: #464646;
     font-size: 16px;
@@ -291,19 +344,23 @@ button, input {
     font-weight: 700;
     margin-bottom: 0;
 }
+
 .item-restaurant-row .old-price {
     font-size: 13px;
     text-decoration: line-through;
     color: #6d6f71;
 }
+
 .item-restaurant-row .current-price {
     font-size: 16px;
     font-weight: 700;
     color: #0288d1;
 }
+
 .txt-right {
-    text-align: right!important;
+    text-align: right !important;
 }
+
 .btn-adding {
     font-size: 20px;
     cursor: pointer;
@@ -313,22 +370,26 @@ button, input {
     height: 22px;
     background-color: #ee4d2d;
 }
+
 .btn-adding, .btn-over {
     text-align: center;
     color: #fff;
     display: inline-block;
     border-radius: 4px;
 }
+
 .now-detail-restaurant .breadcrumb .breadcrumb-link {
     font-size: 13px;
     color: #187caa;
 }
+
 .now-detail-restaurant .detail-restaurant-info {
     color: #252525;
     float: right;
     width: 645px;
     padding-bottom: 15px;
 }
+
 .now-detail-restaurant .kind-restaurant {
     font-size: 11px;
     color: #959595;
@@ -336,12 +397,14 @@ button, input {
     display: -ms-flexbox;
     display: flex;
 }
+
 .now-detail-restaurant .detail-restaurant-img {
     width: 480px;
     height: 300px;
     position: relative;
     float: left;
 }
+
 .now-detail-restaurant .detail-restaurant-img img {
     width: 100%;
     height: 100%;
@@ -351,18 +414,23 @@ button, input {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
+
 .txt-red, .txt-red-dark {
-    color: #ee4d2d!important;
+    color: #ee4d2d !important;
 }
+
 .txt-bold {
-    font-weight: 700!important;
+    font-weight: 700 !important;
 }
+
 *, :after, :before {
     box-sizing: border-box;
 }
+
 .topcontrol.active {
     transform: translate(0);
 }
+
 .topcontrol {
     position: fixed;
     right: 0;
@@ -374,6 +442,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     transition: transform .4s;
     transform: translateY(100%);
 }
+
 .topcontrol .control-link {
     text-align: center;
     display: block;
@@ -381,16 +450,20 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     white-space: nowrap;
     position: relative;
 }
+
 .topcontrol .fab, .topcontrol .fas {
     font-size: 22px;
     color: #464646;
 }
+
 .fa, .fas {
     font-weight: 900;
 }
+
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
 }
+
 .fa, .fab, .fal, .far, .fas {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -400,6 +473,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     text-rendering: auto;
     line-height: 1;
 }
+
 .topcontrol .control-link label {
     color: #464646;
     position: absolute;
@@ -411,12 +485,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     margin-bottom: 0;
     display: none;
 }
+
 div {
     display: block;
 }
+
 body {
     margin: 0;
-    font-family: Noto Sans,Arial,sans-serif;
+    font-family: Noto Sans, Arial, sans-serif;
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
@@ -424,6 +500,7 @@ body {
     text-align: left;
     background-color: #f2f2f2;
 }
+
 :root {
     --blue: #0288d1;
     --blue-dark: #187caa;
@@ -445,25 +522,29 @@ body {
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 *, :after, :before {
     box-sizing: border-box;
 }
+
 .clearfix:after {
     display: block;
     clear: both;
     content: "";
 }
+
 *, :after, :before {
     box-sizing: border-box;
 }

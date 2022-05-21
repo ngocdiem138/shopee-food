@@ -1,7 +1,9 @@
-<%@ page contentType='text/html;charset=UTF-8' %>
-<%@include file='/commons/taglib.jsp' %>
+<%@ page contentType='text/html' pageEncoding='UTF-8' %>
+<%@ include file='/commons/taglib.jsp' %>
+
 <head>
-    <link rel='stylesheet' href='<c:url value='/templates/web/voucher/css/voucher.css'/>'>
+    <link rel='stylesheet' type='text/css' href='<c:url value='/templates/web/voucher/css/voucher.css'/>'>
+    <title>Voucher</title>
 </head>
 <body>
 <div class='promo-code'>
@@ -18,7 +20,7 @@
             <button type='button' class='btn btn-sm'>Tìm kiếm</button>
         </div>
         <div class='promo-code-table'>
-            <img src='<c:url value='/templates/web/voucher/img/Shipper.png'/>' alt=''>
+            <img src='<c:url value='/templates/web/common/img/Shipper.png'/>' alt=''>
             <div>Bạn chưa có mã khuyến mãi</div>
         </div>
     </div>
