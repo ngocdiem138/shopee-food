@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@include file="/commons/taglib.jsp" %>
+<%@ page contentType='text/html' pageEncoding='UTF-8' %>
+<%@ include file='/commons/taglib.jsp' %>
+
 <html>
 <head>
     <title>Title</title>

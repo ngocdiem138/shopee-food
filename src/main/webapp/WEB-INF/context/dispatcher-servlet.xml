@@ -11,5 +11,5 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <mvc:resources mapping="/template/**" location="/templates/"/>
+    <mvc:resources mapping="/templates/**" location="/templates/"/>
 </beans>

@@ -1,0 +1,121 @@
+
+.history-header {
+    text-align: center;
+}
+
+.history-table-container {
+    background: #fff;
+    padding: 20px 15px;
+    border: 1px solid #ebebeb;
+    border-top: 0;
+}
+
+.history-filter-table {
+    width: 100%;
+    font-weight: 400;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.history-filter-table-item {
+    line-height: 1.5;
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0 15px;
+}
+
+
+.history-table-container .history-filter-table .history-filter-table-item select {
+    font-size: 14px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(1.7725rem + 2px);
+}
+
+.history-search-button {
+    color: #fff;
+    background-color: #0288d1;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #0288d1;
+    font-size: .875rem;
+    border-radius: 3px;
+}
+
+.form-control {
+    display: inline-block;
+    width: 100%;
+    padding: .23rem .6rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #6d6f71;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.history-table {
+    font-size: 13px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.history-table-center{
+    display: flex;
+    justify-content: center;
+}
+
+.history-table-row:last-child {
+    border-bottom: none;
+}
+
+.history-table-heading {
+    color: red;
+    /* display: flex; */
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-size: .75rem;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.history-table-cell-margin{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.history-table-cell {
+    -ms-flex: 1 1;
+    flex: 1 1;
+    min-height: 0;
+    min-width: 0;
+    width: auto;
+    position: relative;
+    padding: 8px 5px;
+}
+
+/* .history-table-cell {
+    display: inline-block;
+
+} */
+
+body {
+    margin: 0;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #464646;
+    text-align: left;
+    background-color: #f2f2f2;
+}

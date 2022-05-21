@@ -1,5 +1,5 @@
-<%@ page contentType='text/html;charset=UTF-8' %>
-<%@include file='/commons/taglib.jsp' %>
+<%@ page contentType='text/html' pageEncoding='UTF-8' %>
+<%@ include file='/commons/taglib.jsp' %>
 
 <div class='wrapper'>
     <header class='main-header'>
@@ -10,7 +10,7 @@
                     <div class='logo-now'>
 							<span>
 								<a href='<c:url value='/'/>'>
-									<img src='<c:url value='/templates/web/header/img/shopeefoodvn.png'/>'
+									<img src='<c:url value='/templates/web/common/img/shopeefoodvn.png'/>'
                                          alt='ShopeeFood'>
 								</a>
 							</span>
@@ -22,13 +22,13 @@
                         </div>
                         <ul>
                             <li>
-                                <a href='#' class='HCM' id='1'>
+                                <a href='<c:url value='/'/>' class='HCM' id='1'>
                                     <span class='local' id='local-1' onClick='reply_click(this.id)'>TP.HCM</span>
                                     <span class='place' id='place-1'>81855 địa điểm</span>
                                 </a>
                             </li>
                             <li>
-                                <a href='#' class='DongNai' id='2'>
+                                <a href='<c:url value='/'/>' class='DongNai' id='2'>
                                     <span class='local' id='local-2' onClick='reply_click(this.id)'>Đồng Nai</span>
                                     <span class='place' id='place-2'>81955 địa điểm</span>
                                 </a>
@@ -60,12 +60,12 @@
                                 <ul>
                                     <li>
                                         <a href='<c:url value='/'/>' class='vn' id='lang-vn'
-                                           onClick='lang_change(this.id)'>Tiếng
+                                           onClick="lang_change(this.id)">Tiếng
                                             Việt</a>
                                     </li>
                                     <li>
                                         <a href='<c:url value='/'/>' class='en' id='lang-en'
-                                           onClick='lang_change(this.id)'>Tiếng Anh</a>
+                                           onClick="lang_change(this.id)">Tiếng Anh</a>
                                     </li>
                                 </ul>
                             </div>
