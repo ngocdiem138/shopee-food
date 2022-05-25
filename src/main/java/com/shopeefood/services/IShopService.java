@@ -6,4 +6,5 @@ public interface IShopService {
 
     Shop getShop(Long id);
 
+    Shop save(Shop shop);
 }

@@ -5,11 +5,9 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.SEQUENCE;
 import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
@@ -26,12 +24,7 @@ public class Location extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "location_sequence",
-            sequenceName = "location_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "location_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Nationalized

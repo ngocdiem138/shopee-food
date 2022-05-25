@@ -5,11 +5,10 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
@@ -26,12 +25,7 @@ public class TransportMoney extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "transport_money_sequence",
-            sequenceName = "transport_money_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "transport_money_sequence")
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @ColumnDefault("0.0")

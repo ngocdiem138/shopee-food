@@ -5,12 +5,11 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
@@ -27,12 +26,7 @@ public class Voucher extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "voucher_sequence",
-            sequenceName = "voucher_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "voucher_sequence")
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @Column(nullable = false)

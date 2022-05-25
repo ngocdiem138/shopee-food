@@ -6,11 +6,10 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
@@ -27,12 +26,7 @@ public class Food extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "food_sequence",
-            sequenceName = "food_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "food_sequence")
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @Nationalized
