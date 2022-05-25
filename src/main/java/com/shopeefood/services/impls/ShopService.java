@@ -17,4 +17,9 @@ public class ShopService implements IShopService {
     public Shop getShop(Long id) {
         return shopRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Shop save(Shop shop) {
+        return shopRepository.save(shop);
+    }
 }

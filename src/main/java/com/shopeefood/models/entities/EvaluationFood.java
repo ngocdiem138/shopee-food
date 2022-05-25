@@ -6,7 +6,7 @@ import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.NONE;
 
 @Table
@@ -22,12 +22,7 @@ public class EvaluationFood extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "evaluation_food_sequence",
-            sequenceName = "evaluation_food_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "evaluation_food_sequence")
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @ColumnDefault("0")

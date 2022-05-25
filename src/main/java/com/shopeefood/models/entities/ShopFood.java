@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 import static lombok.AccessLevel.NONE;
 
-@Table
+@Table(name = "shop_food")
 @Getter
 @Setter
 @Entity

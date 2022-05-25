@@ -20,18 +20,18 @@ import java.sql.Timestamp;
 public abstract class Base {
 
     @CreatedDate
-    @Column(name = "created_date", nullable = false)
+    @Column(name = "created_date")
     private Timestamp createdDate;
 
     @CreatedBy
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @LastModifiedDate
-    @Column(name = "modified_date", nullable = false)
+    @Column(name = "modified_date")
     private Timestamp modifiedDate;
 
     @LastModifiedBy
-    @Column(name = "modified_by", nullable = false)
+    @Column(name = "modified_by")
     private String modifiedBy;
 }
