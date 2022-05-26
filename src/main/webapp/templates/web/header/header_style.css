@@ -243,7 +243,7 @@ nav {
     border: 1px solid #f8f8f8;
     position: absolute;
     top: 30px;
-    width: 220px;
+    width: 300px;
     border-radius: 5px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
@@ -278,7 +278,7 @@ nav {
     background-repeat: no-repeat;
 }
 
-header .local {
+header .local{
     padding-top: 1px;
     vertical-align: middle;
     margin-left: 5px;
@@ -286,11 +286,11 @@ header .local {
     white-space: nowrap;
     font-weight: 400;
     color: #252525;
-    width: 85px;
+    width: 100px;
     float: left;
 }
 
-.place {
+.place{
     padding-top: 3px;
     vertical-align: middle;
     font-size: 12px;
@@ -298,7 +298,7 @@ header .local {
     white-space: nowrap;
     font-weight: 400;
     color: #9fa9aa;
-    width: 100px;
+    width: 20px;
     float: right;
 }
 

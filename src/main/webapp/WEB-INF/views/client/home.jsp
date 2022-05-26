@@ -14,8 +14,10 @@
             <div class='container'>
                 <div class='now-search'>
                     <div>
+<%--                        <c:set var="countShop" value="${countShop}"></c:set>--%>
+<%--                        <c:set var="nameProvince" value="${nameProvince}"></c:set>--%>
                         <h1 class='title'>Đặt Đồ ăn; giao hàng từ 20' ...</h1>
-                        <div class='local'>có 67378 địa điểm ở TP. HCM từ 00:00 - 23:59</div>
+                        <div class='local'>có ${provinceSelected.size()} địa điểm ở ${nameProvince} từ 00:00 - 23:59</div>
                     </div>
                     <div class='form-search'>
                         <div class='input-group'>
@@ -101,121 +103,50 @@
                             <a class='view-all-deal' href='<c:url value='/'/>'>
 									<span class='icon-list-deal'>
 										<i class='fas fa-th-list'></i>
+<%--                                        <c:set var="shops" value="${shops}"></c:set>--%>
+                                        <c:forEach var="i" begin="0" end="${provinceSelected.size()-1}">
 										<span class='square'></span>
-										<span class='square'></span>
-										<span class='square'></span>
-										<span class='square'></span>
+                                        </c:forEach>
 									</span>Xem tất cả
                             </a>
                         </div>
                         <div class='list-restaurant'>
                             <div class='now-loading-restaurant  '>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                            </div>
-                            <div class='item-restaurant'>
-                                <a target='_blank' class='item-content' href='<c:url value='/'/>'>
-                                    <div class='img-restaurant'>
-                                        <img src='<c:url value='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'/>'
-                                             class=''>
+                                <c:forEach var="i" begin="0" end="${provinceSelected.size()-1}">
+                                    <div class='box-loading'>
+                                        <div class='box-thumbnail'></div>
+                                        <div class='box-line-df'></div>
+                                        <div class='box-line-lgx'></div>
+                                        <div class='box-line-lg'></div>
                                     </div>
-                                    <div class='info-restaurant'>
-                                        <div class='info-basic-res'>
-                                            <h4 class='name-res' title='Big C - Tân Hiệp'>Big C - Tân Hiệp</h4>
-                                            <div class='address-res'
-                                                 title='Tầng 1 Và Tầng 2 Trung Tâm Thương Mại Big C Tân Hiệp, 1135 Nguyễn Ái Quốc, P. Tân Hiệp, Tp. Biên Hòa, Đồng Nai'>
-                                                Tầng 1 Và Tầng 2 Trung Tâm Thương Mại Big C Tân Hiệp, 1135 Nguyễn Ái
-                                                Quốc, P. Tân Hiệp, Tp. Biên Hòa, Đồng Nai
-                                            </div>
+                                </c:forEach>
+                            </div>
+                            <c:forEach var="shop"  items="${provinceSelected}">
+                                <div class='item-restaurant'>
+                                    <a target='_blank' class='item-content' href='<c:url value='/'/>'>
+                                        <div class='img-restaurant'>
+                                            <img src='<c:url value='${shop.image}'/>'
+                                                 class=''>
                                         </div>
-                                        <p class='content-promotion'>
-                                            <i class='fas fa-tag'></i>
-                                            Giảm món
-                                        </p>
-                                        <div class='opentime-status'>
+                                        <div class='info-restaurant'>
+                                            <div class='info-basic-res'>
+                                                <h4 class='name-res' title='${shop.name}'>${shop.name}</h4>
+                                                <div class='address-res'
+                                                     title='${shop.description}'>${shop.description}
+                                                </div>
+                                            </div>
+                                            <p class='content-promotion'>
+                                                <i class='fas fa-tag'></i>
+                                                Giảm món
+                                            </p>
+                                            <div class='opentime-status'>
                                             <span class='stt online' title='Mở cửa'
                                                   style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class='item-restaurant'>
-                                <a target='_blank' class='item-content'
-                                   href='<c:url value='/'/>'>
-                                    <div class='img-restaurant'>
-                                        <img src='<c:url value='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'/>'
-                                             class=''>
-                                        <div class='tag-preferred'>
-                                            <i class='fa fa-thumbs-up' aria-hidden='true'></i>
-                                            Yêu thích
-                                        </div>
-                                        <img src='' class=''>
-                                    </div>
-                                    <div class='info-restaurant'>
-                                        <div class='info-basic-res'>
-                                            <h4 class='name-res' title='Trái Cây &amp; Rau Củ Quả - Hạt Dinh Dưỡng F48'>
-                                                Trái Cây &amp; Rau Củ Quả - Hạt Dinh Dưỡng F48</h4>
-                                            <div class='address-res'
-                                                 title='5c Tổ 44 Nguyễn Ái Quốc Khu Phố 6, P. Trung Dũng, Tp. Biên Hòa, Đồng Nai'>
-                                                5c Tổ 44 Nguyễn Ái Quốc Khu Phố 6, P. Trung Dũng, Tp. Biên Hòa, Đồng Nai
                                             </div>
                                         </div>
-                                        <p class='content-promotion'>
-                                            <i class='fas fa-tag'></i>
-                                            Flash Sale
-                                        </p>
-                                        <div class='opentime-status'>
-                                            <span class='stt online' title='Mở cửa'
-                                                  style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class='item-restaurant'>
-                                <a target='_blank' class='item-content'
-                                   href='<c:url value='/'/>'>
-                                    <div class='img-restaurant'>
-                                        <img src='<c:url value='/'/>'
-                                             class=''>
-                                    </div>
-                                    <div class='info-restaurant'>
-                                        <div class='info-basic-res'>
-                                            <h4 class='name-res'
-                                                title='Thực Phẩm Dinh Dưỡng - Trái Cây &amp; Rau Củ Giá Bình Ổn - Khu Phố 6'>
-                                                Thực Phẩm Dinh Dưỡng - Trái Cây &amp; Rau Củ Giá Bình Ổn - Khu Phố
-                                                6</h4>
-                                            <div class='address-res'
-                                                 title='3B Khu Phố 6, P. Trung Dũng, Tp. Biên Hòa, Đồng Nai'>3B Khu Phố
-                                                6, P. Trung Dũng, Tp. Biên Hòa, Đồng Nai
-                                            </div>
-                                        </div>
-                                        <p class='content-promotion'>
-                                            <i class='fas fa-tag'></i>
-                                            Giảm món
-                                        </p>
-                                        <div class='opentime-status'>
-                                            <span class='stt online' title='Mở cửa'
-                                                  style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            </c:forEach>
                         </div>
                         <div class='txt-center mt-2'>
                             <button class='btn-none btn-load-more link'>
@@ -230,154 +161,41 @@
                             <a class='view-all-deal' href='<c:url value='/'/>'>
 									<span class='icon-list-deal'>
 										<i class='fas fa-th-list'></i>
-										<span class='square'></span>
-										<span class='square'></span>
-										<span class='square'></span>
+										<c:forEach var="i" begin="0" end="${provinceSelected.size()-1}">
+                                            <span class='square'></span>
+                                        </c:forEach>
 									</span>Xem tất cả
                             </a>
                         </div>
                         <div class='list-restaurant'>
                             <div class='now-loading-restaurant'>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
+                                <c:forEach var="i" begin="0" end="${provinceSelected.size()-1}">
+                                    <div class='box-loading'>
+                                        <div class='box-thumbnail'></div>
+                                        <div class='box-line-df'></div>
+                                        <div class='box-line-lgx'></div>
+                                        <div class='box-line-lg'></div>
+                                    </div>
+                                </c:forEach>
                             </div>
                             <div>
+                                <c:forEach var="shop"  items="${provinceSelected}">
                                 <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
+                                    <a target='_blank' class='item-content' title='${shop.name}'
                                        href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
+                                            <img src='<c:url value='${shop.image}'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
+                                            <h4 class='name-res' title='${shop.name}'>${shop.name}</h4>
                                             <div class='txt-blue font12'>
                                                 200 địa điểm
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='<c:url value='/'/>'>
-                                        <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
-                                                 class=''>
-                                        </div>
-                                        <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
-                                            <div class='txt-blue font12'>
-                                                200 địa điểm
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='<c:url value='/'/>'>
-                                        <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
-                                                 class=''>
-                                        </div>
-                                        <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
-                                            <div class='txt-blue font12'>
-                                                200 địa điểm
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='<c:url value='/'/>'>
-                                        <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
-                                                 class=''>
-                                        </div>
-                                        <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
-                                            <div class='txt-blue font12'>
-                                                200 địa điểm
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='<c:url value='/'/>'>
-                                        <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
-                                                 class=''>
-                                        </div>
-                                        <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
-                                            <div class='txt-blue font12'>
-                                                200 địa điểm
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class='item-restaurant'>
-                                    <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='<c:url value='/'/>'>
-                                        <div class='img-restaurant'>
-                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
-                                                 class=''>
-                                        </div>
-                                        <div class='info-restaurant info-basic-res'>
-                                            <h4 class='name-res' title='Chợ online - Sale Đỉnh giảm 99k'>Chợ online -
-                                                Sale Đỉnh giảm 99k</h4>
-                                            <div class='txt-blue font12'>
-                                                200 địa điểm
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                         <hr>
@@ -393,148 +211,60 @@
                             <div class='col-auto'>
                                 <select name='districtId'>
                                     <option value='-1'>Chọn quận/ huyện</option>
-                                    <option value='48'>Định Quán</option>
-                                    <option value='49'>Long Thành</option>
-                                    <option value='50'>Xuân Lộc</option>
-                                    <option value='51'>Vĩnh Cửu</option>
-                                    <option value='52'>Trảng Bom</option>
-                                    <option value='53'>Thống Nhất</option>
-                                    <option value='55'>Nhơn Trạch</option>
-                                    <option value='56'>Cẩm Mỹ</option>
-                                    <option value='57'>Tp. Biên Hòa</option>
-                                    <option value='66'>Thị xã Long Khánh</option>
-                                    <option value='67'>Tân Phú</option>
+                                    <c:forEach var="district" items="${districts}">
+                                        <option value='${district.id}'>${district.name}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
                         <div class='list-restaurant'>
                             <div class='now-loading-restaurant  '>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
-                                <div class='box-loading'>
-                                    <div class='box-thumbnail'></div>
-                                    <div class='box-line-df'></div>
-                                    <div class='box-line-lgx'></div>
-                                    <div class='box-line-lg'></div>
-                                </div>
+                                <c:forEach var="i" begin="0" end="${provinceSelected.size()-1}">
+                                    <div class='box-loading'>
+                                        <div class='box-thumbnail'></div>
+                                        <div class='box-line-df'></div>
+                                        <div class='box-line-lgx'></div>
+                                        <div class='box-line-lg'></div>
+                                    </div>
+                                </c:forEach>
                             </div>
-                            <div class='item-restaurant'>
-                                <a class='item-content' href='<c:url value='/'/>'>
-                                    <div class='row no-gutters'>
-                                        <div class='col-auto'>
-                                            <div class='img-restaurant'>
-                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'>
-                                            </div>
-                                        </div>
-                                        <div class='col'>
-                                            <div class='info-restaurant'>
-                                                <div class='name-res'>Vinachao - Cháo Dinh Dưỡng</div>
-                                                <div class='row'>
-                                                    <div class='col'>
-                                                        <div class='count-place-res mb-1'>57 địa điểm</div>
-                                                    </div>
-                                                    <div class='col-auto'>
-                                                        <div class='item-res-distant'></div>
-                                                    </div>
+                            <c:forEach var="shop"  items="${provinceSelected}">
+                                <div class='item-restaurant'>
+                                    <a class='item-content' href='<c:url value='/'/>'>
+                                        <div class='row no-gutters'>
+                                            <div class='col-auto'>
+                                                <div class='img-restaurant'>
+                                                    <img src='<c:url value='${shop.image}'/>'>
                                                 </div>
-                                                <div class='item-res-info'>
-                                                    <span class='icon icon-price-tag'></span>
-                                                    Tối thiểu 20k
-                                                    <span class='icon icon-money-sm ml-3'></span>
-                                                    Giá 31k
-                                                </div>
-                                                <p class='kind-restaurant'> Quán ăn</p>
                                             </div>
-                                        </div>
-                                        <div class='opentime-status'>
+                                            <div class='col'>
+                                                <div class='info-restaurant'>
+                                                    <div class='name-res'>${shop.name}</div>
+                                                    <div class='row'>
+                                                        <div class='col'>
+                                                            <div class='count-place-res mb-1'>57 địa điểm</div>
+                                                        </div>
+                                                        <div class='col-auto'>
+                                                            <div class='item-res-distant'></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='item-res-info'>
+                                                        <span class='icon icon-price-tag'></span>
+                                                            ${shop.minMoney}
+                                                        <span class='icon icon-money-sm ml-3'></span>
+                                                            ${shop.maxMoney}
+                                                    </div>
+                                                    <p class='kind-restaurant'> Quán ăn</p>
+                                                </div>
+                                            </div>
+                                            <div class='opentime-status'>
                                             <span class='stt online' title='Mở cửa'
                                                   style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class='item-restaurant'>
-                                <a class='item-content' href='<c:url value='/'/>'>
-                                    <div class='row no-gutters'>
-                                        <div class='col-auto'>
-                                            <div class='img-restaurant'>
-                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'
-                                                     class=''>
                                             </div>
                                         </div>
-                                        <div class='col'>
-                                            <div class='info-restaurant'>
-                                                <div class='name-res'>Vinachao - Cháo Dinh Dưỡng</div>
-                                                <div class='row'>
-                                                    <div class='col'>
-                                                        <div class='count-place-res mb-1'>57 địa điểm</div>
-                                                    </div>
-                                                    <div class='col-auto'>
-                                                        <div class='item-res-distant'></div>
-                                                    </div>
-                                                </div>
-                                                <div class='item-res-info'>
-                                                    <span class='icon icon-price-tag'></span>
-                                                    Tối thiểu 20k
-                                                    <span class='icon icon-money-sm ml-3'></span>
-                                                    Giá 31k
-                                                </div>
-                                                <p class='kind-restaurant'> Quán ăn</p>
-                                            </div>
-                                        </div>
-                                        <div class='opentime-status'>
-                                            <span class='stt online' title='Mở cửa'
-                                                  style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class='item-restaurant'>
-                                <a class='item-content' href='<c:url value='/'/>'>
-                                    <div class='row no-gutters'>
-                                        <div class='col-auto'>
-                                            <div class='img-restaurant'>
-                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'
-                                                     class=''>
-                                            </div>
-                                        </div>
-                                        <div class='col'>
-                                            <div class='info-restaurant'>
-                                                <div class='name-res'>Vinachao - Cháo Dinh Dưỡng</div>
-                                                <div class='row'>
-                                                    <div class='col'>
-                                                        <div class='count-place-res mb-1'>57 địa điểm</div>
-                                                    </div>
-                                                    <div class='col-auto'>
-                                                        <div class='item-res-distant'></div>
-                                                    </div>
-                                                </div>
-                                                <div class='item-res-info'>
-                                                    <span class='icon icon-price-tag'></span>
-                                                    Tối thiểu 20k
-                                                    <span class='icon icon-money-sm ml-3'></span>
-                                                    Giá 31k
-                                                </div>
-                                                <p class='kind-restaurant'> Quán ăn</p>
-                                            </div>
-                                        </div>
-                                        <div class='opentime-status'>
-                                            <span class='stt online' title='Mở cửa'
-                                                  style='color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);'></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            </c:forEach>
                         </div>
                         <div class='txt-center mt-2'>
                             <button class='btn-none btn-load-more link'>
