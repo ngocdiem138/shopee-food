@@ -326,7 +326,7 @@ header .local {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background-image: url('/templates/web/header/img/vietnam.png');
+    background-image: url('/templates/web/common/img/vietnam.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -377,11 +377,11 @@ header .language .lang-menu ul li a:before {
 }
 
 header .language .vn:before {
-    background-image: url('/templates/web/header/img/vietnam.png');
+    background-image: url('/templates/web/common/img/vietnam.png');
 }
 
 header .language .en:before {
-    background-image: url('/templates/web/header/img/anh.png');
+    background-image: url('/templates/web/common/img/anh.png');
 }
 
 header .language .lang-menu:hover ul {
