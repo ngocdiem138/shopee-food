@@ -1,10 +1,11 @@
 <%@ page contentType='text/html' pageEncoding='UTF-8' %>
 <%@ include file='/commons/taglib.jsp' %>
+<jsp:useBean id="shop" scope="request" type="com.shopeefood.models.entities.Shop"/>
+<jsp:useBean id="menus" scope="request" type="java.util.List<com.shopeefood.models.entities.Menu>"/>
 
 <head>
     <link href='<c:url value='/templates/web/shop/css/shop.css'/>' rel='stylesheet'>
-    <title>Đặt Đồ Ăn Trực Tuyến Ở 16 Tỉnh Thanh Phố Trên Toàn Quốc & Giao Hàng tận nơi | Đặt Món & Giao ship tận nơi |
-        shopeefood.vn</title>
+    <title>${shop.name}</title>
     <script src='<c:url value='/templates/web/shop/js/shop.js'/>'></script>
 </head>
 <body>
@@ -13,7 +14,7 @@
         <div class='now-detail-restaurant clearfix'>
             <div class='container'>
                 <div class='detail-restaurant-img'>
-                    <img src='https://images.foody.vn/res/g75/747170/prof/s640x400/foody-upload-api-foody-mobile-1-jpg-180606103333.jpg'
+                    <img src='${shop.image}'
                          alt='Lẩu Đức Trọc - Đường Láng' class=''>
                 </div>
                 <div class='detail-restaurant-info'>
@@ -26,21 +27,20 @@
                                 <a class='breadcrumb-link' rel='nofollow' href='/ha-noi'>Hà Nội</a>
                             </li>
                             <li class='breadcrumb-item'>
-                                <a class='breadcrumb-link' rel='nofollow' href='/ha-noi/lau-duc-troc-duong-lang'>Lẩu Đức
-                                    Trọc - Đường Láng</a>
+                                <a class='breadcrumb-link' rel='nofollow' href='/${shop.id}'>${shop.name}</a>
                             </li>
                         </ol>
                     </nav>
                     <div class='kind-restaurant'>
-                            <span> Quán nhậu
+                            <span> Quán ăn
                                 <span> -
                                     <a class='link-brand' title='Lẩu Đức Trọc' rel='nofollow'
                                        href='/thuong-hieu/bia-duc-troc'>Chi nhánh</a>
                                 </span>
                             </span>
                     </div>
-                    <h1 class='name-restaurant'>Lẩu Đức Trọc - Đường Láng</h1>
-                    <div class='address-restaurant'>790 Đường Láng, Đống Đa, Hà Nội</div>
+                    <h1 class='name-restaurant'>${shop.name}</h1>
+                    <div class='address-restaurant'>${shop.description}</div>
                     <div class='rating'>
                         <div class='stars'>
                                 <span class='full'>
@@ -111,38 +111,15 @@
                         <div class='menu-restaurant-category'>
                             <div class='list-category' id='scroll-spy'>
                                 <div class='scrollbar-container ps'>
-                                    <div class='item'>
+                                    <c:forEach var="menu"
+                                               items="${menus}">
+                                        <div class='item'>
                                             <span id='1321082' title='LẨU &amp; MÓN THEO KG (NƯỚC LẨU GỌI RIÊNG)'
-                                                  class='item-link '>
-                                                LẨU &amp; MÓN THEO KG (NƯỚC LẨU GỌI RIÊNG)
+                                                  class='item-link'>
+                                                    ${menu.name}
                                             </span>
-                                    </div>
-                                    <div class='item'>
-                                            <span id='1321008' title='CÁC MÓN LẨU NHÚNG' class='item-link '>
-                                                CÁC MÓN LẨU NHÚNG
-                                            </span>
-                                    </div>
-                                    <div class='item'>
-                                            <span id='1320992' title='MÓN KHAI VỊ' class='item-link active'>
-                                                 MÓN KHAI VỊ
-                                            </span>
-                                    </div>
-                                    <div class='item'>
-                                            <span id='1320997' title='CÁC MÓN BÒ, BÊ, GÀ, LỢN, TRÂU' class='item-link '>
-                                                CÁC MÓN BÒ, BÊ, GÀ, LỢN, TRÂU
-                                            </span>
-                                    </div>
-                                    <div class='item'>
-                                            <span id='1321003' title='CÁC MÓN ẾCH, MỰC, CÁ, TÔM, CHIM'
-                                                  class='item-link '>
-                                                CÁC MÓN ẾCH, MỰC, CÁ, TÔM, CHIM
-                                            </span>
-                                    </div>
-                                    <div class='item'>
-                                            <span id='1321080' title='ĐỒ THÊM NHÚNG LẨU' class='item-link '>
-                                                ĐỒ THÊM NHÚNG LẨU
-                                            </span>
-                                    </div>
+                                        </div>
+                                    </c:forEach>
                                     <div class='ps__rail-x' style='left: 0px; bottom: 0px;'>
                                         <div class='ps__thumb-x' tabindex='0' style='left: 0px; width: 0px;'></div>
                                     </div>
@@ -165,117 +142,53 @@
                                     <div aria-label='grid' aria-readonly='true'
                                          class='ReactVirtualized__Grid ReactVirtualized__List' role='grid' tabindex='0'
                                          style='box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 558px; will-change: transform; overflow: auto; outline: none;'>
-                                        <div class='ReactVirtualized__Grid__innerScrollContainer' role='rowgroup'
-                                             style='width: auto; height: 6308px; max-width: 558px; max-height: 630px; overflow: hidden; position: relative;'>
-                                            <div class='menu-group' id='section-group-menu-1321082'
-                                                 style='height: 56px; left: 0px; position: absolute; top: 0px; width: 100%;'>
-                                                <div class='title-menu'>
-                                                    LẨU &amp; MÓN THEO KG (NƯỚC LẨU GỌI RIÊNG)
-                                                </div>
-                                            </div>
-                                            <div class='item-restaurant-row'
-                                                 style='height: 81px; left: 0px; position: absolute; top: 56px; width: 100%;'>
-                                                <div class='row'>
-                                                    <div class='col-auto item-restaurant-img'>
-                                                        <button class='inline'>
-                                                            <img src='https://images.foody.vn/default/s120x120/shopeefood-deli-dish-no-image.png'
-                                                                 alt='01. Ếch Xào Thả Lẩu 0,5kg' width='60' height='60'>
-                                                        </button>
-                                                    </div>
-                                                    <div class='col item-restaurant-info'>
-                                                        <h2 class='item-restaurant-name'>01. Ếch Xào Thả Lẩu 0,5kg</h2>
-                                                        <div class='item-restaurant-desc'>Riêng ếch là 0,5kg. Nhà hàng
-                                                            có tặng kèm măng.
-                                                        </div>
-                                                    </div>
-                                                    <div class='col-auto item-restaurant-more'>
-                                                        <div class='row '>
-                                                            <div class='col-auto product-price'>
-                                                                <div class='old-price'>
-                                                                    159,000
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                                <div class='current-price'>
-                                                                    151,050
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class='col-auto adding-food-cart txt-right'>
-                                                                <div class='btn-adding'>+</div>
-                                                            </div>
-                                                        </div>
+                                        <c:forEach var="menu" items="${menus}">
+                                            <div class='ReactVirtualized__Grid__innerScrollContainer' role='rowgroup'
+                                                 style='width: auto; height: 6308px; max-width: 558px; max-height: 630px; overflow: hidden; position: relative;'>
+                                                <div class='menu-group' id='section-group-menu-1321082'
+                                                     style='height: 56px; left: 0px; position: absolute; top: 0px; width: 100%;'>
+                                                    <div class='title-menu'>
+                                                        ${menu.name}
                                                     </div>
                                                 </div>
+                                                <c:forEach var="food" items="${menu.foods}">
+                                                    <div class='item-restaurant-row'
+                                                         style='height: 81px; left: 0px; position: absolute; top: 56px; width: 100%;'>
+                                                        <div class='row'>
+                                                            <div class='col-auto item-restaurant-img'>
+                                                                <button class='inline'>
+                                                                    <img src='${food.image}'
+                                                                         alt='${food.name}' width='60' height='60'>
+                                                                </button>
+                                                            </div>
+                                                            <div class='col item-restaurant-info'>
+                                                                <h2 class='item-restaurant-name'>${food.name}</h2>
+                                                                <div class='item-restaurant-desc'>
+                                                                    ${food.description}
+                                                                </div>
+                                                            </div>
+                                                            <div class='col-auto item-restaurant-more'>
+                                                                <div class='row '>
+                                                                    <div class='col-auto product-price'>
+                                                                        <div class='old-price'>
+                                                                            ${food.price + 5000}
+                                                                            <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
+                                                                        </div>
+                                                                        <div class='current-price'>
+                                                                            ${food.price}
+                                                                            <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class='col-auto adding-food-cart txt-right'>
+                                                                        <div class='btn-adding'>+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </c:forEach>
                                             </div>
-                                            <div class='item-restaurant-row'
-                                                 style='height: 81px; left: 0px; position: absolute; top: 137px; width: 100%;'>
-                                                <div class='row'>
-                                                    <div class='col-auto item-restaurant-img'>
-                                                        <button class='inline'>
-                                                            <img src='https://images.foody.vn/default/s120x120/shopeefood-deli-dish-no-image.png'
-                                                                 alt='01. Ếch Xào Thả Lẩu 0,5kg' width='60' height='60'>
-                                                        </button>
-                                                    </div>
-                                                    <div class='col item-restaurant-info'>
-                                                        <h2 class='item-restaurant-name'>01. Ếch Xào Thả Lẩu 0,5kg</h2>
-                                                        <div class='item-restaurant-desc'>Riêng ếch là 0,5kg. Nhà hàng
-                                                            có tặng kèm măng.
-                                                        </div>
-                                                    </div>
-                                                    <div class='col-auto item-restaurant-more'>
-                                                        <div class='row '>
-                                                            <div class='col-auto product-price'>
-                                                                <div class='old-price'>
-                                                                    159,000
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                                <div class='current-price'>
-                                                                    151,050
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class='col-auto adding-food-cart txt-right'>
-                                                                <div class='btn-adding'>+</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class='item-restaurant-row'
-                                                 style='height: 81px; left: 0px; position: absolute; top: 218px; width: 100%;'>
-                                                <div class='row'>
-                                                    <div class='col-auto item-restaurant-img'>
-                                                        <button class='inline'>
-                                                            <img src='https://images.foody.vn/default/s120x120/shopeefood-deli-dish-no-image.png'
-                                                                 alt='01. Ếch Xào Thả Lẩu 0,5kg' width='60' height='60'>
-                                                        </button>
-                                                    </div>
-                                                    <div class='col item-restaurant-info'>
-                                                        <h2 class='item-restaurant-name'>01. Ếch Xào Thả Lẩu 0,5kg</h2>
-                                                        <div class='item-restaurant-desc'>Riêng ếch là 0,5kg. Nhà hàng
-                                                            có tặng kèm măng.
-                                                        </div>
-                                                    </div>
-                                                    <div class='col-auto item-restaurant-more'>
-                                                        <div class='row '>
-                                                            <div class='col-auto product-price'>
-                                                                <div class='old-price'>
-                                                                    159,000
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                                <div class='current-price'>
-                                                                    151,050
-                                                                    <span style='font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;'>đ</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class='col-auto adding-food-cart txt-right'>
-                                                                <div class='btn-adding'>+</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </c:forEach>
                                     </div>
                                 </div>
                             </div>
