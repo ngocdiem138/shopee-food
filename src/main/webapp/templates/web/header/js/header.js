@@ -6,9 +6,9 @@ function lang_change(clicked_id) {
     // Lấy thẻ div
     var div = document.getElementById("selected-lang");
     if (clicked_id == "lang-vn") {
-        div.style.backgroundImage = "url(/asset/img/vietnam.png)"; // change it
+        div.style.backgroundImage = "url(/templates/web/common/img/vietnam.png)"; // change it
     } else {
-        div.style.backgroundImage = "url(/asset/img/anh.png)"; // change it
+        div.style.backgroundImage = "url(/templates/web/common/img/vietnam.png)"; // change it
     }
 }
 

@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.NONE;
 import static org.hibernate.annotations.CascadeType.ALL;
 
@@ -30,12 +30,7 @@ public class Shop extends Base {
     @Id
     @Setter(NONE)
     @Column(updatable = false)
-    @SequenceGenerator(
-            name = "shop_sequence",
-            sequenceName = "shop_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = SEQUENCE, generator = "shop_sequence")
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @Nationalized
@@ -51,7 +46,7 @@ public class Shop extends Base {
     private String description;
 
     @Setter(NONE)
-    @Column(nullable = false)
+    @Column(name = "open_time", nullable = false)
     private String openTime;
 
     @Transient
@@ -73,7 +68,7 @@ public class Shop extends Base {
     private Double maxMoney;
 
     @ManyToOne
-    @JoinColumn(nullable = false, foreignKey = @ForeignKey(name = "shop_user_boss_id_fk"))
+    @JoinColumn(name = "user_boss_id", nullable = false, foreignKey = @ForeignKey(name = "shop_user_boss_id_fk"))
     private User userBoss;
 
     @ManyToOne

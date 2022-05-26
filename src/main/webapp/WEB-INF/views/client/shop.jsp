@@ -1,7 +1,8 @@
-<%@ page contentType='text/html;charset=UTF-8' %>
-<%@include file='/commons/taglib.jsp' %>
+<%@ page contentType='text/html' pageEncoding='UTF-8' %>
+<%@ include file='/commons/taglib.jsp' %>
+
 <head>
-    <link href='<c:url value='/templates/web/shop/shop.css'/>' rel='stylesheet'>
+    <link href='<c:url value='/templates/web/shop/css/shop.css'/>' rel='stylesheet'>
     <title>Đặt Đồ Ăn Trực Tuyến Ở 16 Tỉnh Thanh Phố Trên Toàn Quốc & Giao Hàng tận nơi | Đặt Món & Giao ship tận nơi |
         shopeefood.vn</title>
     <script src='<c:url value='/templates/web/shop/js/shop.js'/>'></script>

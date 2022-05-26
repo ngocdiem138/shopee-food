@@ -1,10 +1,11 @@
-<%@ page contentType='text/html;charset=UTF-8' %>
-<%@include file='/commons/taglib.jsp' %>
+<%@ page contentType='text/html' pageEncoding='UTF-8' %>
+<%@ include file='/commons/taglib.jsp' %>
+
 <head>
-    <link type='text/css' href='<c:url value='/templates/web/home/css/home.css'/>' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='<c:url value='/templates/web/home/css/home.css'/>'>
     <title>Đặt Đồ Ăn Trực Tuyến Ở 16 Tỉnh Thanh Phố Trên Toàn Quốc & Giao Hàng tận nơi | Đặt Món & Giao ship tận nơi |
         shopeefood.vn</title>
-    <script src='<c:url value='/templates/web/home/js/home.js'/>'></script>
+    <script type='text/javascript' src='<c:url value='/templates/web/home/js/home.js'/>'></script>
 </head>
 <body>
 <div id='app'>
@@ -19,7 +20,7 @@
                     <div class='form-search'>
                         <div class='input-group'>
                             <input type='text' id='txtSearchHome' placeholder='Tìm địa điểm, món ăn, địa chỉ...' value>
-                            <a href=''>
+                            <a href='<c:url value='/'/>'>
                                 <button type='button' class='btn btn-search'>
                                     <span class='icon fas fa-search'></span>
                                 </button>
@@ -27,30 +28,30 @@
                         </div>
                     </div>
                     <div class='category-list-filter'>
-                        <a href='/dong-nai/danh-sach-dia-diem-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>All</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-do-chay-98-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Đồ chay</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-trai-cay-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Trái cây</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-thit-trung-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Thịt / Trứng</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-thuy-hai-san-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Thủy hải sản</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-rau-cu-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Rau củ</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-gao-mi-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Gạo mì</span>
                         </a>
-                        <a href='/dong-nai/danh-sach-dia-diem-phuc-vu-do-hop-do-uong-giao-tan-noi'>
+                        <a href='<c:url value='/'/>'>
                             <span class='category-item '>Đồ hộp / Đồ uống</span>
-                        </a><a href='/dong-nai/danh-sach-dia-diem-phuc-vu-gia-vi-106-giao-tan-noi'>
+                        </a><a href='<c:url value='/'/>'>
                         <span class='category-item '>Gia vị</span>
                     </a>
                     </div>
@@ -62,11 +63,13 @@
                         </div>
                         <a target='_blank' rel='noopener noreferrer'
                            href='https://itunes.apple.com/us/app/deliverynow/id1137866760' title='App Store'>
-                            <img src='/asset/img/AppStore-vn.png' class='icon-gg-play-big '>
+                            <img src='<c:url value='/templates/web/common/img/AppStore-vn.png'/>'
+                                 class='icon-gg-play-big '>
                         </a>
                         <a target='_blank' rel='noopener noreferrer'
                            href='https://play.google.com/store/apps/details?id=com.deliverynow' title='Google play'>
-                            <img src='/asset/img/PlayStore-vn.png' class='icon-app-store-big'>
+                            <img src='<c:url value='/templates/web/common/img/PlayStore-vn.png'/>'
+                                 class='icon-app-store-big'>
                         </a>
                     </div>
                 </div>
@@ -95,7 +98,7 @@
                     <div class='now-list-restaurant deal-tab'>
                         <div class='title-wrapper'>
                             <h2 class='title'>Ưu đãi</h2>
-                            <a class='view-all-deal' href='/dong-nai/fresh/deals'>
+                            <a class='view-all-deal' href='<c:url value='/'/>'>
 									<span class='icon-list-deal'>
 										<i class='fas fa-th-list'></i>
 										<span class='square'></span>
@@ -127,9 +130,9 @@
                                 </div>
                             </div>
                             <div class='item-restaurant'>
-                                <a target='_blank' class='item-content' href='/dong-nai/big-c-tan-hiep'>
+                                <a target='_blank' class='item-content' href='<c:url value='/'/>'>
                                     <div class='img-restaurant'>
-                                        <img src='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'
+                                        <img src='<c:url value='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'/>'
                                              class=''>
                                     </div>
                                     <div class='info-restaurant'>
@@ -154,9 +157,9 @@
                             </div>
                             <div class='item-restaurant'>
                                 <a target='_blank' class='item-content'
-                                   href='/dong-nai/trai-cay-rau-cu-qua-hat-dinh-duong-f48'>
+                                   href='<c:url value='/'/>'>
                                     <div class='img-restaurant'>
-                                        <img src='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'
+                                        <img src='<c:url value='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'/>'
                                              class=''>
                                         <div class='tag-preferred'>
                                             <i class='fa fa-thumbs-up' aria-hidden='true'></i>
@@ -186,9 +189,9 @@
                             </div>
                             <div class='item-restaurant'>
                                 <a target='_blank' class='item-content'
-                                   href='/dong-nai/thuc-pham-dinh-duong-trai-cay-rau-cu-gia-binh-on-khu-pho-6'>
+                                   href='<c:url value='/'/>'>
                                     <div class='img-restaurant'>
-                                        <img src='https://images.foody.vn/res/g112/1114302/prof/s280x175/image-77473f1f-220312103455.jpg'
+                                        <img src='<c:url value='/'/>'
                                              class=''>
                                     </div>
                                     <div class='info-restaurant'>
@@ -224,7 +227,7 @@
                     <div class='now-list-restaurant deal-tab collection collection-tab'>
                         <div class='title-wrapper'>
                             <h2 class='title'>Bộ sưu tập</h2>
-                            <a class='view-all-deal' href='/fresh/collection-list'>
+                            <a class='view-all-deal' href='<c:url value='/'/>'>
 									<span class='icon-list-deal'>
 										<i class='fas fa-th-list'></i>
 										<span class='square'></span>
@@ -281,9 +284,9 @@
                             <div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -297,9 +300,9 @@
                                 </div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -313,9 +316,9 @@
                                 </div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -329,9 +332,9 @@
                                 </div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -345,9 +348,9 @@
                                 </div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -361,9 +364,9 @@
                                 </div>
                                 <div class='item-restaurant'>
                                     <a target='_blank' class='item-content' title='Chợ online - Sale Đỉnh giảm 99k'
-                                       href='/bo-suu-tap/cho-online---sale-dinh-giam-99k'>
+                                       href='<c:url value='/'/>'>
                                         <div class='img-restaurant'>
-                                            <img src='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'
+                                            <img src='<c:url value='https://images.foody.vn/delivery/collection/s320x200/image-6edd98d0-211206222900.png'/>'
                                                  class=''>
                                         </div>
                                         <div class='info-restaurant info-basic-res'>
@@ -426,11 +429,11 @@
                                 </div>
                             </div>
                             <div class='item-restaurant'>
-                                <a class='item-content' href='/thuong-hieu/vinachao-chao-dinh-duong'>
+                                <a class='item-content' href='<c:url value='/'/>'>
                                     <div class='row no-gutters'>
                                         <div class='col-auto'>
                                             <div class='img-restaurant'>
-                                                <img src='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'>
+                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'>
                                             </div>
                                         </div>
                                         <div class='col'>
@@ -461,11 +464,11 @@
                                 </a>
                             </div>
                             <div class='item-restaurant'>
-                                <a class='item-content' href='/thuong-hieu/vinachao-chao-dinh-duong'>
+                                <a class='item-content' href='<c:url value='/'/>'>
                                     <div class='row no-gutters'>
                                         <div class='col-auto'>
                                             <div class='img-restaurant'>
-                                                <img src='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'
+                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'
                                                      class=''>
                                             </div>
                                         </div>
@@ -497,11 +500,11 @@
                                 </a>
                             </div>
                             <div class='item-restaurant'>
-                                <a class='item-content' href='/thuong-hieu/vinachao-chao-dinh-duong'>
+                                <a class='item-content' href='<c:url value='/'/>'>
                                     <div class='row no-gutters'>
                                         <div class='col-auto'>
                                             <div class='img-restaurant'>
-                                                <img src='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'
+                                                <img src='<c:url value='https://images.foody.vn/res/g105/1045870/prof/s280x175/image-d13349c1-210115153911.jpeg'/>'
                                                      class=''>
                                             </div>
                                         </div>
@@ -553,7 +556,8 @@
                 <span>
 						<p class='font15'> ShopeeFood sẽ bảo quản đơn của bạn bằng túi &amp; thùng để chống nắng mưa, giữ nhiệt... trên đường đi một cách tốt nhất. </p>
 					</span>
-                <img src='/asset/img/Box-food-preservation-footer.png' alt='food preservation'>
+                <img src='<c:url value='/templates/web/common/img/Box-food-preservation-footer.png'/>'
+                     alt='food preservation'>
             </div>
             <div class='now-container-coporation img-right'>
                 <h4 class='title'>
@@ -575,7 +579,8 @@
 						</p>
 					</span>
                 <div class='bg-corporation'>
-                    <img src='/asset/img/banner-phone-reg-merchant.png' alt='NowMerchant App' title='NowMerchant App'
+                    <img src='<c:url value='/templates/web/common/img/banner-phone-reg-merchant.png'/>'
+                         alt='NowMerchant App' title='NowMerchant App'
                          width='294px'>
                 </div>
             </div>
@@ -602,7 +607,8 @@
 						</p>
 					</span>
                 <div class='bg-corporation'>
-                    <img src='/asset/img/bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi.png' class='bg-deliverynow'
+                    <img src='<c:url value='/templates/web/common/img/bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi.png'/>'
+                         class='bg-deliverynow'
                          alt='bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi'
                          title='bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi' width='170px' data-change-lang=''
                          style='width: 170px;'>
@@ -637,7 +643,7 @@
                         <div class='col'><sup class='txt-red txt-bold'>* </sup>Xin vui lòng kiểm tra đơn hàng của bạn
                             trước khi nhận.
                         </div>
-                        <a href='/lich-su-dat-mon' class='btn btn-none-bg'>Xem lịch sử đặt món</a>
+                        <a href='<c:url value='/'/>' class='btn btn-none-bg'>Xem lịch sử đặt món</a>
                         <button type='button' class='btn btn-red' data-dismiss='modal'>Ok</button>
                     </div>
                 </div>
@@ -650,12 +656,14 @@
                     <i class='fas fa-angle-up'></i>
                     <label>Quay lại đầu trang</label>
                 </div>
-                <a class='control-link' href='https://itunes.apple.com/us/app/deliverynow/id1137866760' target='_blank'
+                <a class='control-link' href='<c:url value='https://itunes.apple.com/us/app/deliverynow/id1137866760'/>'
+                   target='_blank'
                    rel='noopener noreferrer'>
                     <i class='fab fa-apple'></i>
                     <label>Tải ứng dụng iOs</label>
                 </a>
-                <a class='control-link' href='https://play.google.com/store/apps/details?id=com.deliverynow'
+                <a class='control-link'
+                   href='<c:url value='https://play.google.com/store/apps/details?id=com.deliverynow'/>'
                    target='_blank' rel='noopener noreferrer'>
                     <i class='fab fa-android'></i>
                     <label>Tải ứng dụng android</label>
